@@ -10,16 +10,16 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-const passport = require('passport');
+// const passport = require('passport');
 
 const {PORT, DATABASE_URL} = require('./config');
 //Local Strategy & JWT Strategy 
-const {localStrategy,jwtStrategy} = require('./auth')
+// const {localStrategy,jwtStrategy} = require('./auth')
 //****************************************************
 // Passport
 //****************************************************
-passport.use(localStrategy);
-passport.use(jwtStrategy);
+// passport.use(localStrategy);
+// passport.use(jwtStrategy);
 
 const app = express();
 
