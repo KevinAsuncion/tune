@@ -2,19 +2,31 @@
   "name": "tune",
   "version": "1.0.0",
   "description": "An app that tunes you into the good things in your life",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "mocha --exit"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
     "express": "^4.16.3",
-    "npm": "^6.0.0"
+    "jsonwebtoken": "^8.2.1",
+    "moment": "^2.22.1",
+    "mongoose": "^5.0.17",
+    "morgan": "^1.9.0",
+    "npm": "^6.0.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
-    "mocha": "^5.1.1"
+    "faker": "^4.1.0",
+    "mocha": "^5.1.1",
+    "nodemon": "^1.17.4"
   }
 }
