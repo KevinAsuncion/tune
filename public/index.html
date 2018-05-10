@@ -13,12 +13,137 @@
 
     <body>
         <header role="banner">
+            <div class ="header-bar">
+                <div class="logo">
+                    <h1>TUNE</h1>
+                </div>
+                <nav class="navigation-bar">
+                    <ul class="navigation-links">
+                        <li><a href="#" class="login-link nav-links">Login</a></li>
+                        <li><a href="#" class="signup-link nav-links">Sign up</a></li>
+                        <li><a href="#" class="logout-link nav-links">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
         <main role="main">
-                <p>hello world</p>
+            <div class="main-container">
+               <div class="welcome-container">
+                   <p>Tune is a daily journal that helps you focus on the good things in your life.</p>
+                   <button class="welcome-signup-button">Signup</button>
+                   <p>Already have an account? Login</p>
+               </div>
+                <div class="login-form-container">
+                    <fieldset>
+                        <button type="button" class="close-login">
+                            <span>&times;</span>
+                        </button>
+                        <form role="form" class="login-form">
+                            <label>Username<input type="text"></label>
+                            <label>Password<input type="text"></label>
+                            <button class="login-form-btn">Login</button>
+                            <p>Demo Account: Username: Demo, Password: Demo</p>
+                        </form>
+                    </fieldset>
+                </div>
+                <div class="register-form-container">
+                    <fieldset>
+                        <button type="button" class="close-register">
+                            <span>&times;</span>
+                        </button>
+                        <form role="form" class="register-form">
+                            <label>First Name<input type="text"></label>
+                            <label>Last Name<input type="text"></label>
+                            <label>Username<input type="text"></label>
+                            <label>Password<input type="text"></label>
+                            <button class="register-form-btn">Submit</button>
+                        </form>
+                    </fieldset>
+                </div>
+                <section class="entry-form" role="region">
+                    <div class="entry-form-container">
+                        <fieldset>
+                            <form>
+                                <label>Image url<input type="text"></label>
+                                <label>How is this photo meaningful to me?<textarea></textarea></label>
+                                <label>Today I am grateful for..<textarea></textarea></label>
+                                <label>What is the best version of me?<textarea></textarea></label>
+                                <button class="create-entry-submit-btn">Submit</button>
+                                <button class="cancel-create-entry-btn">Cancel</button>
+                            </form>
+                        </fieldset>
+                    </div>
+                </section>
+               
+                <section class="view-entry" role="region">
+                    <div class="view-entry-container">
+                        <img src="http://www.mybaba.com/wp-content/uploads/2012/10/Headspace-brain.png" alt="meaningful photo" class="meainigful-photo-img">
+                        <h2>This photo means..</h2>
+                        <p class="meaningful-photo-entry"> but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                            the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+                            like Aldus PageMaker including versions of Lorem Ipsum</p>
+                        <h2>Today I am grateful for..</h2>
+                        <p class="grateful-entry"> but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                            the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+                            like Aldus PageMaker including versions of Lorem Ipsum</p>
+                        <h2>My best version of me today is..</h2>
+                        <p class="best-version-entry"> but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                            the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+                            like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    </div>
+                    <button class="edit-entry-btn">Edit</button>
+                    <button class="delete-entry-btn">Delete</button>
+                    <button class="cancel-edit-entry-btn">Cancel</button>
+                </section>
+
+                <section class="journal-dashboard" role="region">
+                    <div class="journal-dashboard-container">
+                        <p class="welcome-user">Welcome Kevin Asuncion</p>
+                        <button class="create-new-entry-btn">Create a new entry</button>
+                    </div>
+                </section>
+                
+                <section class="journal-entries">
+                    <div class="journal-entries-container">
+                        <div class="journal-entry">
+                            <img src="http://www.gorilladoctors.org/wp-content/uploads/2014/10/empowering2-300x300.jpg" alt="nice photo" class="journal-entry-img"/>
+                            <p class="journal-entry-date">5/11/2018</p>
+                        </div>
+                        <div class="journal-entry">
+                            <img src="http://www.gorilladoctors.org/wp-content/uploads/2014/10/empowering2-300x300.jpg" alt="nice photo" class="journal-entry-img"
+                            />
+                            <p class="journal-entry-date">5/11/2018</p>
+                        </div>
+                        <div class="journal-entry">
+                            <img src="http://www.gorilladoctors.org/wp-content/uploads/2014/10/empowering2-300x300.jpg" alt="nice photo" class="journal-entry-img"
+                            />
+                            <p class="journal-entry-date">5/11/2018</p>
+                        </div>
+                        <div class="journal-entry">
+                            <img src="http://www.gorilladoctors.org/wp-content/uploads/2014/10/empowering2-300x300.jpg" alt="nice photo" class="journal-entry-img"
+                            />
+                            <p class="journal-entry-date">5/11/2018</p>
+                        </div>
+                        <div class="journal-entry">
+                            <img src="http://www.gorilladoctors.org/wp-content/uploads/2014/10/empowering2-300x300.jpg" alt="nice photo" class="journal-entry-img"
+                            />
+                            <p class="journal-entry-date">5/11/2018</p>
+                        </div>
+                        <div class="journal-entry">
+                            <img src="http://www.gorilladoctors.org/wp-content/uploads/2014/10/empowering2-300x300.jpg" alt="nice photo" class="journal-entry-img"
+                            />
+                            <p class="journal-entry-date">5/11/2018</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </main>
+        <footer role="contentinfo">
+            <div>
+                <p>Built by Kevin Asuncion</p>
+            </div>
+        </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="index.js"></script>
     </body>
-
 </html>
