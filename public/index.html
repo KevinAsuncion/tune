@@ -21,128 +21,141 @@
                     <ul class="navigation-links">
                         <li><a href="#" class="login-link nav-links">Login</a></li>
                         <li><a href="#" class="signup-link nav-links">Sign up</a></li>
-                        <li><a href="#" class="logout-link nav-links">Logout</a></li>
+                        <li><a href="#" class="logout-link nav-links" hidden>Logout</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
         <main role="main">
             <div class="main-container">
-               <div class="welcome-container">
+               <div class="hero">
                    <p>Tune is a daily journal that helps you focus on the good things in your life.</p>
-                   <button class="welcome-signup-button">Signup</button>
-                   <p>Already have an account? Login</p>
+                   <button class="hero-signup-button">Signup</button>
+                   <p class="hero-login-link">Already have an account? <span class="login-link">Login</span></p>
                </div>
-                <div class="login-form-container">
-                    <fieldset>
-                        <button type="button" class="close-login">
-                            <span>&times;</span>
-                        </button>
-                        <form role="form" class="login-form">
-                            <label>Username<input type="text"></label>
-                            <label>Password<input type="text"></label>
-                            <button class="login-form-btn">Login</button>
-                            <p>Demo Account: Username: Demo, Password: Demo</p>
-                        </form>
-                    </fieldset>
-                </div>
-                <div class="register-form-container">
-                    <fieldset>
-                        <button type="button" class="close-register">
-                            <span>&times;</span>
-                        </button>
-                        <form role="form" class="register-form">
-                            <label>First Name<input type="text"></label>
-                            <label>Last Name<input type="text"></label>
-                            <label>Username<input type="text"></label>
-                            <label>Password<input type="text"></label>
-                            <button class="register-form-btn">Submit</button>
-                        </form>
-                    </fieldset>
-                </div>
-                <section class="entry-form" role="region">
+
+                <section class="view-entry" role="region">
+                </section>
+
+                <section class="journal-dashboard" role="region">
+                    <div class="journal-dashboard-container">
+                        <p class="journal-dashboard-welcome-user">Welcome </p>
+                        <button class="create-new-entry-btn">Create a new entry</button>
+                    </div>
+                </section>
+
+                <section class="entry-form" role="region" hidden>
                     <div class="entry-form-container">
                         <fieldset>
                             <form>
-                                <label>Image url<input type="text"></label>
-                                <label>How is this photo meaningful to me?<textarea></textarea></label>
-                                <label>Today I am grateful for..<textarea></textarea></label>
-                                <label>What is the best version of me?<textarea></textarea></label>
+                                <label>Image url
+                                    <input type="text">
+                                </label>
+                                <label>How is this photo meaningful to me?
+                                    <textarea></textarea>
+                                </label>
+                                <label>Today I am grateful for..
+                                    <textarea></textarea>
+                                </label>
+                                <label>What is the best version of me?
+                                    <textarea></textarea>
+                                </label>
                                 <button class="create-entry-submit-btn">Submit</button>
                                 <button class="cancel-create-entry-btn">Cancel</button>
                             </form>
                         </fieldset>
                     </div>
                 </section>
-               
-                <section class="view-entry" role="region">
-                    <div class="view-entry-container">
-                        <img src="http://www.mybaba.com/wp-content/uploads/2012/10/Headspace-brain.png" alt="meaningful photo" class="meainigful-photo-img">
-                        <h2>This photo means..</h2>
-                        <p class="meaningful-photo-entry"> but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-                            the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                            like Aldus PageMaker including versions of Lorem Ipsum</p>
-                        <h2>Today I am grateful for..</h2>
-                        <p class="grateful-entry"> but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-                            the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                            like Aldus PageMaker including versions of Lorem Ipsum</p>
-                        <h2>My best version of me today is..</h2>
-                        <p class="best-version-entry"> but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-                            the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                            like Aldus PageMaker including versions of Lorem Ipsum</p>
-                    </div>
-                    <button class="edit-entry-btn">Edit</button>
-                    <button class="delete-entry-btn">Delete</button>
-                    <button class="cancel-edit-entry-btn">Cancel</button>
-                </section>
-
-                <section class="journal-dashboard" role="region">
-                    <div class="journal-dashboard-container">
-                        <p class="welcome-user">Welcome Kevin Asuncion</p>
-                        <button class="create-new-entry-btn">Create a new entry</button>
-                    </div>
-                </section>
                 
                 <section class="journal-entries">
                     <div class="journal-entries-container">
-                        <div class="journal-entry">
-                            <img src="http://www.gorilladoctors.org/wp-content/uploads/2014/10/empowering2-300x300.jpg" alt="nice photo" class="journal-entry-img"/>
-                            <p class="journal-entry-date">5/11/2018</p>
-                        </div>
-                        <div class="journal-entry">
-                            <img src="http://www.gorilladoctors.org/wp-content/uploads/2014/10/empowering2-300x300.jpg" alt="nice photo" class="journal-entry-img"
-                            />
-                            <p class="journal-entry-date">5/11/2018</p>
-                        </div>
-                        <div class="journal-entry">
-                            <img src="http://www.gorilladoctors.org/wp-content/uploads/2014/10/empowering2-300x300.jpg" alt="nice photo" class="journal-entry-img"
-                            />
-                            <p class="journal-entry-date">5/11/2018</p>
-                        </div>
-                        <div class="journal-entry">
-                            <img src="http://www.gorilladoctors.org/wp-content/uploads/2014/10/empowering2-300x300.jpg" alt="nice photo" class="journal-entry-img"
-                            />
-                            <p class="journal-entry-date">5/11/2018</p>
-                        </div>
-                        <div class="journal-entry">
-                            <img src="http://www.gorilladoctors.org/wp-content/uploads/2014/10/empowering2-300x300.jpg" alt="nice photo" class="journal-entry-img"
-                            />
-                            <p class="journal-entry-date">5/11/2018</p>
-                        </div>
-                        <div class="journal-entry">
-                            <img src="http://www.gorilladoctors.org/wp-content/uploads/2014/10/empowering2-300x300.jpg" alt="nice photo" class="journal-entry-img"
-                            />
-                            <p class="journal-entry-date">5/11/2018</p>
-                        </div>
                     </div>
                 </section>
             </div>
         </main>
+
         <footer role="contentinfo">
             <div>
                 <p>Built by Kevin Asuncion</p>
+                <a href="https://www.freepik.com/free-photo/hands-writing-in-open-book-and-leaves_1459569.htm">Designed by Freepik</a>
             </div>
         </footer>
+
+        <div class="create-entry-modal">
+            <div class="modal-content">
+                <span class="create-entry-close-button">&times;</span>
+                <h2>Create New Entry</h2>
+                <div class="create-entry-form-container">
+                    <fieldset>
+                        <form class="create-entry-form">
+                            <label class="image-url-label">Image url
+                                <input type="text" class="image-url-input">
+                            </label>
+                            <label class="create-entry-form-label">The meaning of this image is..
+                                <textarea class="meaning-image-input" placeholder="it reminds me that family is the most important thing"></textarea>
+                            </label>
+                            <label class="create-entry-form-label">I am grateful for..
+                                <textarea class="grateful-input" placeholder="my health, my friends and family"></textarea>
+                            </label>
+                            <label class="create-entry-form-label">My best self today is..
+                                <textarea class="bestself-input" placeholder="someone who is compassionate, kind, and finds time to exercise and eat healthy"></textarea>
+                            </label>
+                            <button class="create-entry-submit-btn">Submit</button>
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-modal">
+            <div class="modal-content">
+                <span class="login-close-button">&times;</span>
+                <h2>Login</h2>
+                <div class="login-form-container">
+                    <fieldset>
+                        <form role="form" class="login-form">
+                            <label class="login-username">Username
+                                <input type="text">
+                            </label>
+                            <label class="login-password">Password
+                                <input type="text">
+                            </label>
+                            <button class="login-form-btn">Login</button>
+                            <p class="login-error"></p>
+                            <p class="demo-account-text">Demo Account</br> Username: Demo/Password: Demo</p>
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+        <div class="signup-modal">
+            <div class="modal-content">
+                <span class="signup-close-button">&times;</span>
+                <h2>Signup</h2>
+                <div class="signup-form-container">
+                    <fieldset>
+                        <form role="form" class="signup-form">
+                            <label>Full Name
+                                <input type="text">
+                            </label>
+                            <label>Username
+                                <input type="text">
+                            </label>
+                            <label>Password
+                                <input type="text">
+                            </label>
+                            <p class="signup-error"></p>
+                            <button class="signup-form-btn">Submit</button>
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+      
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="index.js"></script>
     </body>
