@@ -3,11 +3,17 @@
 const ENTRY = [
     {
         image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
+        photo_meaning: '0 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+        grateful: '0 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+        best_self: '0 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+        created_date: moment().format("dddd, MMMM Do YYYY"),
+    },
+    {
+        image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
         photo_meaning: '1 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
         grateful: '1 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
         best_self: '1 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
         created_date: moment().format("dddd, MMMM Do YYYY"),
-        id: 1
     },
     {
         image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
@@ -15,7 +21,6 @@ const ENTRY = [
         grateful: '2 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
         best_self: '2 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
         created_date: moment().format("dddd, MMMM Do YYYY"),
-        id: 2
     },
     {
         image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
@@ -23,7 +28,6 @@ const ENTRY = [
         grateful: '3 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
         best_self: '3 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
         created_date: moment().format("dddd, MMMM Do YYYY"),
-        id: 3
     },
     {
         image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
@@ -31,7 +35,6 @@ const ENTRY = [
         grateful: '4 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
         best_self: '4 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
         created_date: moment().format("dddd, MMMM Do YYYY"),
-        id: 4
     },
     {
         image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
@@ -39,7 +42,6 @@ const ENTRY = [
         grateful: '5 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
         best_self: '5 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
         created_date: moment().format("dddd, MMMM Do YYYY"),
-        id: 5
     },
     {
         image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
@@ -47,7 +49,6 @@ const ENTRY = [
         grateful: '6 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
         best_self: '6 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
         created_date: moment().format("dddd, MMMM Do YYYY"),
-        id: 6
     },
     {
         image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
@@ -55,15 +56,6 @@ const ENTRY = [
         grateful: '7 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
         best_self: '7 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
         created_date: moment().format("dddd, MMMM Do YYYY"),
-        id: 7
-    },
-    {
-        image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
-        photo_meaning: '8 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        grateful: '8 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        best_self: '8 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        created_date: moment().format("dddd, MMMM Do YYYY"),
-        id: 8
     }
 ]
 
@@ -72,12 +64,11 @@ function renderDashboardJournalEntries(entries){
         return {
             image_url: entry.image_url,
             created_date: entry.created_date,
-            id: entry.id
         };
     });
-    let journalEntriesList = journalEntries.map(entry => {
+    let journalEntriesList = journalEntries.map((entry,index) => {
         return `
-            <div class="journal-entry-card" data-id="${entry.id}">
+            <div class="journal-entry-card" data-id="${index}">
                 <img src="${entry.image_url}"/>
                 <p class="journal-entry-date">${entry.created_date}</p>
                 <div class="overlay">
@@ -90,8 +81,8 @@ function renderDashboardJournalEntries(entries){
 }
 
 function getTheId(){
-    $('.journal-entries-container').on('click', '.entry-view-btn', event => {
-        let selectedId = parseInt($(event.currentTarget).parents('.journal-entry-card').attr('data-id'));
+    $('.journal-entries-container').on('click', '.entry-view-btn', e => {
+        const selectedId = parseInt($(e.currentTarget).parents('.journal-entry-card').attr('data-id'));
         renderEntry(selectedId);
     })
 }
@@ -129,13 +120,12 @@ function createNewJournalEntry(){
 }
 
 function renderEntry(selectedId){
-    console.log(selectedId)
-   const selectedEntry = ENTRY.find(entry=>{
-        return entry.id === selectedId;
+   const selectedEntry = ENTRY.find((entry,index)=>{
+        return index === selectedId;
     })
     $('.view-entry').html(
     `
-    <div class="view-entry-container" data-id ="${selectedId}">
+    <div class="view-entry-container" data-id ="${selectedId}" id="js-view">
      <img src="${selectedEntry.image_url}" alt="meaningful-photo" class="meaningful-image-img"/>
         <h2 class="entry-meaningful-photo-heading">This photo means..</h2>
         <p class="meaningful-photo-entry">${selectedEntry.photo_meaning} </p>
@@ -152,8 +142,18 @@ function renderEntry(selectedId){
         </div>
     </div>
     `)
+    $('html,body').animate({
+        scrollTop: $(".view-entry").offset().top
+    },'slow');
 }
 
+function listenDeleteButton() {
+    $('.view-entry').on('click', '.delete-entry-btn', e => {
+        const selectedId = parseInt($(e.currentTarget).parents('.view-entry-container').attr('data-id'));
+        ENTRY.splice(selectedId,1)
+        renderDashboardJournalEntries(ENTRY);
+    });
+}
 
 
 //-------------Hero------------------//
@@ -201,6 +201,24 @@ function toggleSignUpModal() {
     $('.signup-modal').toggleClass('show-modal')
 }
 
+//----------------View Entry------------------//
+
+// function listenViewEntry() {
+//     $('.journal-entries-container').on('click', '.view-entry-btn', function () {
+//         toggleViewEntryModal();
+//     });
+// }
+
+// function listenViewEntryCloseButton() {
+//     $('.view-entry-close-button').on('click', function () {
+//         toggleViewEntryModal();
+//     });
+// }
+
+// function toggleViewEntryModal() {
+//     $('.view-entry-modal').toggleClass('show-modal')
+// }
+
 
 //----------------Create Entry------------------//
 
@@ -220,6 +238,31 @@ function toggleCreateEntryModal() {
     $('.create-entry-modal').toggleClass('show-modal')
 }
 
+//----------------Edit Entry------------------//
+
+function listenEditButton() {
+    $('.login-link').on('click', function () {
+        toggleLoginModal();
+    })
+}
+
+function listenEditButton() {
+    $('.view-entry').on('click', '.edit-entry-btn', e => {
+        console.log('hello from the edit btn')
+        const selectedId = parseInt($(e.currentTarget).parents('.view-entry-container').attr('data-id'));
+        console.log(selectedId)
+    });
+}
+
+function listenEditCloseButton() {
+    $('.edit-entry-close-button').on('click', function () {
+        toggleEditModal();
+    })
+}
+
+function toggleEditModal() {
+    $('.edit-modal').toggleClass('show-modal')
+}
 
 function startApp(){
     listenWelcomeSignUp()
@@ -228,10 +271,12 @@ function startApp(){
     listenSignUp();
     listenSignUpCloseButton();
     listenCreateEntry();
-    listenCreateEntryCloseButton()
+    listenCreateEntryCloseButton();
     renderDashboardJournalEntries(ENTRY);
-    createNewJournalEntry()
+    createNewJournalEntry();
     getTheId();
+    listenEditButton();
+    listenDeleteButton();
 }
 
 $(startApp)
@@ -252,15 +297,8 @@ $(startApp)
 
 //Server Side 
 
-//Create
+
 
 //Update
 
-//Read 
 
-//Delete
-
-
-//store your id on the element as data-id attribute 
-
-//Next step:  mock data all possile entries use that to style 

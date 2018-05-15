@@ -146,7 +146,18 @@ textarea {
     margin-bottom: 40px;
 }
 
-.login-form-btn, .signup-form-btn, .create-entry-submit-btn {
+.create-new-entry-btn {
+    color: white;
+    border: 2px solid rgb(31, 58, 104);
+    background-color: rgb(31, 58, 104);
+    border-radius: 3px;
+    font-weight: bold;
+    height: 35px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.login-form-btn, .signup-form-btn, .create-entry-submit-btn,.edit-entry-submit-btn {
     color: white;
     border: 2px solid rgb(31, 58, 104);
     background-color: rgb(31, 58, 104);
@@ -157,11 +168,11 @@ textarea {
     cursor: pointer;
 }
 
-.login-form-btn:hover, .signup-form-btn:hover,.create-entry-submit-btn:hover {
+.login-form-btn:hover, .signup-form-btn:hover,.create-entry-submit-btn:hover, .create-new-entry-btn:hover, .edit-entry-submit-btn:hover {
     background-color: rgb(43, 78, 133)
 }
 
-.create-entry-form-label {
+.create-entry-form-label, .edit-entry-form-label {
     padding-bottom: 100px;
 }
 
@@ -190,7 +201,7 @@ footer {
 }
 
 .journal-entry-card img {
-    height: auto; 
+    height: 200px; 
     width: 100%;
 }
 
@@ -266,9 +277,14 @@ footer {
     margin-right: auto;
     max-width: 500px;
 }
+
+.view-entry-container img {
+    width: 100%;
+    height: auto;
+}
 /* Modal */
 
-.signup-modal, .login-modal, .create-entry-modal{
+.signup-modal, .login-modal, .create-entry-modal, .view-entry-modal, .edit-entry-modal{
     position: fixed;
     left: 0;
     top: 0;
@@ -280,6 +296,7 @@ footer {
     transform: scale(1.1);
     transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
+
 .modal-content {
     position: absolute;
     top: 50%;
@@ -297,7 +314,7 @@ h2 {
     text-align: center;
 }
 
-.login-close-button, .signup-close-button, .create-entry-close-button{
+.login-close-button, .signup-close-button, .create-entry-close-button, .edit-entry-close-button, .view-entry-close-button{
     float: right;
     width: 1.5rem;
     line-height: 1.5rem;
