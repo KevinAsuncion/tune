@@ -76,16 +76,16 @@
 
             <div class="login-modal">
                 <div class="modal-content">
-                    <span class="login-close-button">&times;</span>
+                    <span class="login-close-button" aria-label="close">&times;</span>
                     <h2>Login</h2>
                     <div class="login-form-container">
                         <fieldset>
                             <form role="form" class="login-form">
                                 <label class="login-username">Username
-                                    <input type="text" required>
+                                    <input type="text" name="username" required>
                                 </label>
                                 <label class="login-password">Password
-                                    <input type="password" required>
+                                    <input type="password" name="password" required>
                                 </label>
                                 <button class="login-form-btn">Login</button>
                                 <p class="login-error"></p>
@@ -97,22 +97,22 @@
             </div>
             <div class="create-entry-modal">
                 <div class="modal-content">
-                    <span class="create-entry-close-button">&times;</span>
+                    <span class="create-entry-close-button" aria-label="close">&times;</span>
                     <h2>Create New Entry</h2>
                     <div class="create-entry-form-container">
                         <fieldset>
                             <form class="create-entry-form">
                                 <label class="image-url-label">Image url
-                                    <input type="text" class="image-url-input" required>
+                                    <input type="text" class="image-url-input" name="image_url" required>
                                 </label>
                                 <label class="create-entry-form-label">The meaning of this image is..
-                                    <textarea class="meaning-image-input" placeholder="it reminds me that family is the most important thing" required></textarea>
+                                    <textarea class="meaning-image-input" name="meaningful_image" placeholder="it reminds me that family is the most important thing" required></textarea>
                                 </label>
                                 <label class="create-entry-form-label">I am grateful for..
-                                    <textarea class="grateful-input" placeholder="my health, my friends and family" required></textarea>
+                                    <textarea class="grateful-input" name="grateful" placeholder="my health, my friends and family" required></textarea>
                                 </label>
                                 <label class="create-entry-form-label">My best self today is..
-                                    <textarea class="bestself-input" placeholder="someone who is compassionate, kind, and finds time to exercise and eat healthy"
+                                    <textarea class="bestself-input" name="best_self" placeholder="someone who is compassionate, kind, and finds time to exercise and eat healthy"
                                         required></textarea>
                                 </label>
                                 <button class="create-entry-submit-btn">Submit</button>
@@ -124,23 +124,23 @@
             
             <div class="edit-entry-modal">
                 <div class="modal-content">
-                    <span class="edit-entry-close-button">&times;</span>
+                    <span class="edit-entry-close-button" aria-label="close">&times;</span>
                     <h2>Edit Entry</h2>
                     <div class="edit-entry-form-container">
                         <fieldset>
                             <form class="edit-entry-form">
                                 <input type="hidden" class="edit-selected-id">
                                 <label class="image-url-label">Image url
-                                    <input type="text" class="edit-image-url-input" required>
+                                    <input type="text" name="image_url" class="edit-image-url-input" required>
                                 </label>
                                 <label class="edit-entry-form-label">The meaning of this image is..
-                                    <textarea class="edit-meaning-image-input" placeholder="it reminds me that family is the most important thing" required></textarea>
+                                    <textarea class="edit-meaning-image-input" name="meaningful_image" placeholder="it reminds me that family is the most important thing" required></textarea>
                                 </label>
                                 <label class="edit-entry-form-label">I am grateful for..
-                                    <textarea class="edit-grateful-input" placeholder="my health, my friends and family" required></textarea>
+                                    <textarea class="edit-grateful-input" name="grateful" placeholder="my health, my friends and family" required></textarea>
                                 </label>
                                 <label class="edit-entry-form-label">My best self today is..
-                                    <textarea class="edit-bestself-input" placeholder="someone who is compassionate, kind, and finds time to exercise and eat healthy"
+                                    <textarea class="edit-bestself-input" name="best_self" placeholder="someone who is compassionate, kind, and finds time to exercise and eat healthy"
                                         required></textarea>
                                 </label>
                                 <button class="edit-entry-submit-btn">Submit</button>
@@ -152,19 +152,19 @@
             
             <div class="signup-modal">
                 <div class="modal-content">
-                    <span class="signup-close-button">&times;</span>
+                    <span class="signup-close-button" aria-label="close">&times;</span>
                     <h2>Signup</h2>
                     <div class="signup-form-container">
                         <fieldset>
                             <form role="form" class="signup-form">
                                 <label>Full Name
-                                    <input type="text" required>
+                                    <input type="text" name="fullname"required>
                                 </label>
                                 <label>Username
-                                    <input type="text" required>
+                                    <input type="text" name="username" required>
                                 </label>
                                 <label>Password
-                                    <input type="password" required>
+                                    <input type="password" name="password" required>
                                 </label>
                                 <p class="signup-error"></p>
                                 <button class="signup-form-btn">Submit</button>
