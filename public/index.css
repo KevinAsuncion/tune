@@ -12,6 +12,9 @@ body {
 .logo {
     margin-left: 20px;
 }
+.create-new-entry-btn {
+    font-weight: bold; 
+}
 
 .header-bar {
     display: flex; 
@@ -146,6 +149,10 @@ textarea {
     margin-bottom: 40px;
 }
 
+.create-new-entry {
+    margin: 10px auto;
+}
+
 .create-new-entry-btn {
     color: white;
     border: 2px solid rgb(31, 58, 104);
@@ -157,7 +164,9 @@ textarea {
     cursor: pointer;
 }
 
-.login-form-btn, .signup-form-btn, .create-entry-submit-btn,.edit-entry-submit-btn {
+
+.login-form-btn, .signup-form-btn, .create-entry-submit-btn,
+.edit-entry-submit-btn{
     color: white;
     border: 2px solid rgb(31, 58, 104);
     background-color: rgb(31, 58, 104);
@@ -168,14 +177,26 @@ textarea {
     cursor: pointer;
 }
 
-.login-form-btn:hover, .signup-form-btn:hover,.create-entry-submit-btn:hover, .create-new-entry-btn:hover, .edit-entry-submit-btn:hover {
+.edit-entry-btn, .delete-entry-btn, .cancel-entry-btn {
+    color: white;
+    border: 2px solid rgb(31, 58, 104);
+    background-color: rgb(31, 58, 104);
+    border-radius: 3px;
+    font-weight: bold;
+    height: 35px;
+    width: 30%;
+    cursor: pointer;
+}
+
+.login-form-btn:hover, .signup-form-btn:hover,.create-entry-submit-btn:hover, 
+.create-new-entry-btn:hover, .edit-entry-submit-btn:hover, .edit-entry-btn:hover, 
+.delete-entry-btn:hover, .cancel-entry-btn:hover {
     background-color: rgb(43, 78, 133)
 }
 
 .create-entry-form-label, .edit-entry-form-label {
     padding-bottom: 100px;
 }
-
 
 footer {
     width: 100%;
@@ -188,7 +209,8 @@ footer {
 .journal-entries-container {
     display: flex; 
     flex-wrap: wrap;
-    width: 90%;
+    justify-content: center;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -196,7 +218,7 @@ footer {
 .journal-entry-card {
     height: 200px;
     width: 200px;
-    margin: 50px 50px;
+    margin: 50px 30px;
     position: relative;
 }
 
@@ -266,10 +288,11 @@ footer {
 }
 
 .view-entry-btns {
-    width: 300px;
+    display: flex; 
+    justify-content: space-around
 }
 
-.view-entry-container {
+.view-entry {
     display: flex; 
     flex-direction: column;
     width: 80%;
@@ -284,7 +307,7 @@ footer {
 }
 /* Modal */
 
-.signup-modal, .login-modal, .create-entry-modal, .view-entry-modal, .edit-entry-modal{
+.signup-modal, .login-modal, .create-entry-modal, .edit-entry-modal{
     position: fixed;
     left: 0;
     top: 0;

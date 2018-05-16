@@ -59,107 +59,11 @@ const ENTRY = [
     }
 ]
 
-function renderDashboardJournalEntries(entries){
-    let journalEntries = entries.map(entry =>{
-        return {
-            image_url: entry.image_url,
-            created_date: entry.created_date,
-        };
-    });
-    let journalEntriesList = journalEntries.map((entry,index) => {
-        return `
-            <div class="journal-entry-card" data-id="${index}">
-                <img src="${entry.image_url}"/>
-                <p class="journal-entry-date">${entry.created_date}</p>
-                <div class="overlay">
-                <button class="entry-view-btn">View</button>
-                 </div>
-            </div> 
-        `
-    })
-    $('.journal-entries-container').html(journalEntriesList);
-}
-
-function getTheId(){
-    $('.journal-entries-container').on('click', '.entry-view-btn', e => {
-        const selectedId = parseInt($(e.currentTarget).parents('.journal-entry-card').attr('data-id'));
-        renderEntry(selectedId);
-    })
-}
-
-//generateEntry
-//generateEntryList
-//renderEntries
-//addEntryToList
-//handleItemSubmit
-//getItemID
-//deleteItem
-
-function createNewJournalEntry(){
-    $('.create-entry-form').submit(function(e){
-       e.preventDefault();
-       const image_url = $('.image-url-input').val();
-       const meaningful_image = $('.meaning-image-input').val();
-       const grateful = $('.grateful-input').val();
-       const bestSelf = $('.bestself-input').val();
-       $('.image-url-input').val('');
-       $('.meaning-image-input').val('');
-       $('.grateful-input').val('');
-       $('.bestself-input').val('');
-       ENTRY.push({
-           image_url: image_url,
-           photo_meaning: meaningful_image,
-           grateful: grateful,
-           best_self: bestSelf,
-           created_date: moment().format("dddd, MMMM Do YYYY"),
-           id: 9
-       })
-       renderDashboardJournalEntries(ENTRY);
-       toggleCreateEntryModal();
-    })
-}
-
-function renderEntry(selectedId){
-   const selectedEntry = ENTRY.find((entry,index)=>{
-        return index === selectedId;
-    })
-    $('.view-entry').html(
-    `
-    <div class="view-entry-container" data-id ="${selectedId}" id="js-view">
-     <img src="${selectedEntry.image_url}" alt="meaningful-photo" class="meaningful-image-img"/>
-        <h2 class="entry-meaningful-photo-heading">This photo means..</h2>
-        <p class="meaningful-photo-entry">${selectedEntry.photo_meaning} </p>
-        <h2 class="entry-grateful-heading">I am grateful for..</h2>
-        <p class="grateful-entry">${selectedEntry.grateful} </p>
-        <h2 class="entry-best-self-heading">My best self is..</h2>
-        <p class="best-self-entry"> ${selectedEntry.best_self}</p>
-
-        <div class="view-entry-btns">
-            <button class="edit-entry-btn">Edit</button>
-            <button class="delete-entry-btn">Delete</button>
-            <button class="cancel-edit-entry-btn" hidden>Cancel</button>
-            <button class="back-entry-btn">Back</button>
-        </div>
-    </div>
-    `)
-    $('html,body').animate({
-        scrollTop: $(".view-entry").offset().top
-    },'slow');
-}
-
-function listenDeleteButton() {
-    $('.view-entry').on('click', '.delete-entry-btn', e => {
-        const selectedId = parseInt($(e.currentTarget).parents('.view-entry-container').attr('data-id'));
-        ENTRY.splice(selectedId,1)
-        renderDashboardJournalEntries(ENTRY);
-    });
-}
-
 
 //-------------Hero------------------//
 
-function listenWelcomeSignUp(){
-    $('.hero-signup-button').on('click', function(){
+function listenWelcomeSignUp() {
+    $('.hero-signup-button').on('click', function () {
         toggleSignUpModal();
     })
 }
@@ -167,7 +71,7 @@ function listenWelcomeSignUp(){
 //-----------------Login------------------//
 
 function listenLogin() {
-    $('.login-link').on('click', function(){
+    $('.login-link').on('click', function () {
         toggleLoginModal();
     })
 }
@@ -201,29 +105,10 @@ function toggleSignUpModal() {
     $('.signup-modal').toggleClass('show-modal')
 }
 
-//----------------View Entry------------------//
-
-// function listenViewEntry() {
-//     $('.journal-entries-container').on('click', '.view-entry-btn', function () {
-//         toggleViewEntryModal();
-//     });
-// }
-
-// function listenViewEntryCloseButton() {
-//     $('.view-entry-close-button').on('click', function () {
-//         toggleViewEntryModal();
-//     });
-// }
-
-// function toggleViewEntryModal() {
-//     $('.view-entry-modal').toggleClass('show-modal')
-// }
-
-
 //----------------Create Entry------------------//
 
-function listenCreateEntry(){
-    $('.create-new-entry-btn').on('click', function(){
+function listenCreateEntry() {
+    $('.create-new-entry-btn').on('click', function () {
         toggleCreateEntryModal();
     });
 }
@@ -238,20 +123,136 @@ function toggleCreateEntryModal() {
     $('.create-entry-modal').toggleClass('show-modal')
 }
 
-//----------------Edit Entry------------------//
-
-function listenEditButton() {
-    $('.login-link').on('click', function () {
-        toggleLoginModal();
+function createNewJournalEntry() {
+    $('.create-entry-form').submit(e => {
+        e.preventDefault();
+        const image_url = $('.image-url-input').val();
+        const meaningful_image = $('.meaning-image-input').val();
+        const grateful = $('.grateful-input').val();
+        const bestSelf = $('.bestself-input').val();
+        $('.image-url-input').val('');
+        $('.meaning-image-input').val('');
+        $('.grateful-input').val('');
+        $('.bestself-input').val('');
+        ENTRY.push({
+            image_url: image_url,
+            photo_meaning: meaningful_image,
+            grateful: grateful,
+            best_self: bestSelf,
+            created_date: moment().format("dddd, MMMM Do YYYY"),
+        })
+        renderDashboardJournalEntries(ENTRY);
+        toggleCreateEntryModal();
+        $('.entry-container').empty();
+        if ($('.cancel-entry-btn, .edit-entry-btn, .delete-entry-btn').is(':visible')) {
+            $('.cancel-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
+        }
     })
 }
 
-function listenEditButton() {
-    $('.view-entry').on('click', '.edit-entry-btn', e => {
-        console.log('hello from the edit btn')
-        const selectedId = parseInt($(e.currentTarget).parents('.view-entry-container').attr('data-id'));
-        console.log(selectedId)
+function renderDashboardJournalEntries(entries) {
+    let journalEntries = entries.map(entry => {
+        return {
+            image_url: entry.image_url,
+            created_date: entry.created_date,
+        };
     });
+    let journalEntriesList = journalEntries.map((entry, index) => {
+        return `
+            <div class="journal-entry-card" data-id="${index}">
+                <img src="${entry.image_url}"/>
+                <p class="journal-entry-date">${entry.created_date}</p>
+                <div class="overlay">
+                <button class="entry-view-btn">View</button>
+                 </div>
+            </div> 
+        `
+    })
+    $('.journal-entries-container').html(journalEntriesList);
+}
+
+function getTheId() {
+    $('.journal-entries-container').on('click', '.entry-view-btn', e => {
+        const selectedId = parseInt($(e.currentTarget).parents('.journal-entry-card').attr('data-id'));
+        renderViewEntry(selectedId);
+    })
+}
+
+function renderViewEntry(selectedId) {
+    const selectedEntry = ENTRY.find((entry, index) => {
+        return index === selectedId;
+    })
+
+
+    $('.entry-container').html(
+        `
+      <span id="selected-id" data-id="${selectedId}"></span>
+      <img src="${selectedEntry.image_url}" alt="meaningful-photo" class="meaningful-image-img"/>
+        <h2 class="entry-meaningful-photo-heading">This photo means..</h2>
+        <p class="meaningful-photo-entry">${selectedEntry.photo_meaning} </p>
+        <h2 class="entry-grateful-heading">I am grateful for..</h2>
+        <p class="grateful-entry">${selectedEntry.grateful} </p>
+        <h2 class="entry-best-self-heading">My best self is..</h2>
+        <p class="best-self-entry"> ${selectedEntry.best_self}</p>
+    `)
+    $('html,body').animate({
+        scrollTop: $(".view-entry").offset().top
+    }, 'slow');
+    $('.create-new-entry-btn').toggle();//////////
+    toggleEditAndDeleteButtons();
+    $('.journal-entries-container').toggle();
+
+}
+
+function toggleEditAndDeleteButtons() {
+    if ($('.cancel-entry-btn, .edit-entry-btn, .delete-entry-btn').is(':visible')) {
+        return;
+    }
+    $('.cancel-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
+}
+
+//----------------Edit Entry------------------//
+
+function listenEditButton() {
+    $('.edit-entry-btn').on('click', e => {
+        toggleEditModal();
+        const selectedId = parseInt($(e.currentTarget).parents('.view-entry').find('#selected-id').attr('data-id'));
+        $('.edit-image-url-input').val(ENTRY[selectedId].image_url);
+        $('.edit-meaning-image-input').val(ENTRY[selectedId].photo_meaning);
+        $('.edit-grateful-input').val(ENTRY[selectedId].grateful);
+        $('.edit-bestself-input').val(ENTRY[selectedId].best_self);
+        $('.edit-selected-id').val(selectedId);
+    });
+}
+
+
+function listenEditEntrySubmitButton() {
+    $('.edit-entry-form').submit(e => {
+        e.preventDefault();
+        const selectedId = $('.edit-selected-id').val();
+        const updated_image_url = $('.edit-image-url-input').val();
+        const updated_meaning_image = $('.edit-meaning-image-input').val();
+        const updated_grateful = $('.edit-grateful-input').val();
+        const updated_best_self = $('.edit-bestself-input').val();
+        const updated_created_date = moment().format("dddd, MMMM Do YYYY");
+
+        const updatedEntry = {
+            image_url: updated_image_url,
+            photo_meaning: updated_meaning_image,
+            grateful: updated_grateful,
+            best_self: updated_best_self,
+            created_date: updated_created_date
+        }
+
+        ENTRY.splice(selectedId, 1, updatedEntry);
+        renderDashboardJournalEntries(ENTRY);
+        toggleEditModal();
+        $('.entry-container').empty();
+        $('.cancel-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
+        $('.journal-entries-container').toggle();
+        $('.create-new-entry-btn').toggle(); /////////////
+    })
+
 }
 
 function listenEditCloseButton() {
@@ -261,10 +262,48 @@ function listenEditCloseButton() {
 }
 
 function toggleEditModal() {
-    $('.edit-modal').toggleClass('show-modal')
+    $('.edit-entry-modal').toggleClass('show-modal')
 }
 
-function startApp(){
+//-------------Cancel------------------//
+
+function listenCancelButton() {
+    $('.cancel-entry-btn').on('click', function () {
+        $('.entry-container').empty();
+        $('.cancel-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
+
+        if (!$('.journal-entries-container').is(':visible')) {
+            $('.journal-entries-container').toggle();
+        };
+
+        if (!$('.create-new-entry-btn').is(':visible')) {
+            $('.create-new-entry-btn').toggle(); /////////////
+        };
+    })
+}
+
+
+
+
+//-------------Delete------------------//
+
+function listenDeleteButton() {
+    $('.delete-entry-btn').on('click', e => {
+        const selectedId = parseInt($(e.currentTarget).parents('.view-entry').find('#selected-id').attr('data-id'));
+        ENTRY.splice(selectedId, 1);
+        $('.entry-container').empty();
+        $('.cancel-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
+        renderDashboardJournalEntries(ENTRY);
+        $('.journal-entries-container').toggle()
+        $('.create-new-entry-btn').toggle();
+    });
+}
+
+
+
+//----------------Start App------------------//
+
+function startApp() {
     listenWelcomeSignUp()
     listenLogin();
     listenLoginCloseButton();
@@ -275,30 +314,12 @@ function startApp(){
     renderDashboardJournalEntries(ENTRY);
     createNewJournalEntry();
     getTheId();
-    listenEditButton();
     listenDeleteButton();
+    listenEditButton();
+    listenEditEntrySubmitButton();
+    listenEditCloseButton();
+    listenCancelButton()
 }
 
 $(startApp)
-
-
-//Client Side 
-
-//Create 
-
-//Update 
-
-
-
-//Read 
-
-
-//Delete 
-
-//Server Side 
-
-
-
-//Update
-
 
