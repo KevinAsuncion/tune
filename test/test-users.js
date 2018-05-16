@@ -9,7 +9,7 @@ const expect = chai.expect;
 chai.use(chaiHttp);
 
 describe('user endpoint', function () {
-    it('should create a user', function () {
+    it('should get a user', function () {
         return chai.request(app)
             .get('/')
             .then(function (res) {
