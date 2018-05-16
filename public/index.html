@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang='en'>
+    <head>
+        <meta charset="utf-8">
+        <title>Tune - Positive Journal App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Positive psychology daily journal">
+        <link href="https://fonts.googleapis.com/css?family=Oxygen|Varela+Round" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+            crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <title>Tune - Positive Journal App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Positive psychology daily journal">
-    <link href="https://fonts.googleapis.com/css?family=Oxygen|Varela+Round" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="index.css">
-</head>
-
-<body>
-    <header role="banner">
-        <div class="header-bar">
-            <div class="logo">
-                <h1>TUNE</h1>
+    <body>
+        <header role="banner">
+            <div class="header-bar">
+                <div class="logo">
+                    <h1>TUNE</h1>
+                </div>
+                <nav class="navigation-bar">
+                    <ul class="navigation-links">
+                        <li>
+                            <a href="#" class="login-link nav-links">Login</a>
+                        </li>
+                        <li>
+                            <a href="#" class="signup-link nav-links">Sign up</a>
+                        </li>
+                        <li>
+                            <a href="#" class="logout-link nav-links" hidden>Logout</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="navigation-bar">
-                <ul class="navigation-links">
-                    <li>
-                        <a href="#" class="login-link nav-links">Login</a>
-                    </li>
-                    <li>
-                        <a href="#" class="signup-link nav-links">Sign up</a>
-                    </li>
-                    <li>
-                        <a href="#" class="logout-link nav-links" hidden>Logout</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main role="main">
-        <div class="main-container">
+        </header>
+
+        <section class="welcome-page" role="region">
             <div class="hero">
                 <p>Tune is a daily journal that helps you focus on the good things in your life.</p>
                 <button class="hero-signup-button">Signup</button>
@@ -41,144 +42,151 @@
                     <span class="login-link">Login</span>
                 </p>
             </div>
-            <div class="create-new-entry">
-                <button class="create-new-entry-btn"> + Add New Entry</button>
-            </div>
+        </section>
+        
+        <main role="main">
+            <section class="journal">
+                <div class="main-container" aria-live="assertive">
+                    <div class="create-new-entry">
+                        <button class="create-new-entry-btn"> + Add New Entry</button>
+                    </div>
 
-            <div class="view-entry">
-                <div class="entry-container">
-                </div>
+                    <div class="view-entry">
+                        <div class="entry-container">
+                        </div>
 
-                <div class="view-entry-btns">
-                    <button class="edit-entry-btn" hidden>Edit</button>
-                    <button class="delete-entry-btn" hidden>Delete</button>
-                    <button class="cancel-entry-btn" hidden>Cancel</button>
-                </div>
-            </div>
+                        <div class="view-entry-btns">
+                            <button class="edit-entry-btn" hidden>Edit</button>
+                            <button class="delete-entry-btn" hidden>Delete</button>
+                            <button class="cancel-entry-btn" hidden>Cancel</button>
+                        </div>
+                    </div>
 
-            <section class="journal-dashboard" role="region">
-                <div class="journal-dashboard-container">
+                    <div class="journal-dashboard">
+                        <div class="journal-dashboard-container">
+                        </div>
+                    </div>
+
+                    <div class="journal-entries">
+                        <div class="journal-entries-container">
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <section class="journal-entries">
-                <div class="journal-entries-container">
+            <div class="login-modal">
+                <div class="modal-content">
+                    <span class="login-close-button">&times;</span>
+                    <h2>Login</h2>
+                    <div class="login-form-container">
+                        <fieldset>
+                            <form role="form" class="login-form">
+                                <label class="login-username">Username
+                                    <input type="text" required>
+                                </label>
+                                <label class="login-password">Password
+                                    <input type="password" required>
+                                </label>
+                                <button class="login-form-btn">Login</button>
+                                <p class="login-error"></p>
+                                <p class="demo-account-text">Demo Account</br> Username: Demo/Password: Demo</p>
+                            </form>
+                        </fieldset>
+                    </div>
                 </div>
-            </section>
-        </div>
-    </main>
-
-    <footer role="contentinfo">
-        <div>
-            <p>Built by Kevin Asuncion</p>
-            <a href="https://www.freepik.com/free-photo/hands-writing-in-open-book-and-leaves_1459569.htm">Designed by Freepik</a>
-        </div>
-    </footer>
-
-    <div class="create-entry-modal">
-        <div class="modal-content">
-            <span class="create-entry-close-button">&times;</span>
-            <h2>Create New Entry</h2>
-            <div class="create-entry-form-container">
-                <fieldset>
-                    <form class="create-entry-form">
-                        <label class="image-url-label">Image url
-                            <input type="text" class="image-url-input" required>
-                        </label>
-                        <label class="create-entry-form-label">The meaning of this image is..
-                            <textarea class="meaning-image-input" placeholder="it reminds me that family is the most important thing" required></textarea>
-                        </label>
-                        <label class="create-entry-form-label">I am grateful for..
-                            <textarea class="grateful-input" placeholder="my health, my friends and family" required></textarea>
-                        </label>
-                        <label class="create-entry-form-label">My best self today is..
-                            <textarea class="bestself-input" placeholder="someone who is compassionate, kind, and finds time to exercise and eat healthy"
-                                required></textarea>
-                        </label>
-                        <button class="create-entry-submit-btn">Submit</button>
-                    </form>
-                </fieldset>
             </div>
-        </div>
-    </div>
-
-    <div class="edit-entry-modal">
-        <div class="modal-content">
-            <span class="edit-entry-close-button">&times;</span>
-            <h2>Edit Entry</h2>
-            <div class="edit-entry-form-container">
-                <fieldset>
-                    <form class="edit-entry-form">
-                        <input type="hidden" class="edit-selected-id">
-                        <label class="image-url-label">Image url
-                            <input type="text" class="edit-image-url-input" required>
-                        </label>
-                        <label class="edit-entry-form-label">The meaning of this image is..
-                            <textarea class="edit-meaning-image-input" placeholder="it reminds me that family is the most important thing" required></textarea>
-                        </label>
-                        <label class="edit-entry-form-label">I am grateful for..
-                            <textarea class="edit-grateful-input" placeholder="my health, my friends and family" required></textarea>
-                        </label>
-                        <label class="edit-entry-form-label">My best self today is..
-                            <textarea class="edit-bestself-input" placeholder="someone who is compassionate, kind, and finds time to exercise and eat healthy"
-                                required></textarea>
-                        </label>
-                        <button class="edit-entry-submit-btn">Submit</button>
-                    </form>
-                </fieldset>
+            <div class="create-entry-modal">
+                <div class="modal-content">
+                    <span class="create-entry-close-button">&times;</span>
+                    <h2>Create New Entry</h2>
+                    <div class="create-entry-form-container">
+                        <fieldset>
+                            <form class="create-entry-form">
+                                <label class="image-url-label">Image url
+                                    <input type="text" class="image-url-input" required>
+                                </label>
+                                <label class="create-entry-form-label">The meaning of this image is..
+                                    <textarea class="meaning-image-input" placeholder="it reminds me that family is the most important thing" required></textarea>
+                                </label>
+                                <label class="create-entry-form-label">I am grateful for..
+                                    <textarea class="grateful-input" placeholder="my health, my friends and family" required></textarea>
+                                </label>
+                                <label class="create-entry-form-label">My best self today is..
+                                    <textarea class="bestself-input" placeholder="someone who is compassionate, kind, and finds time to exercise and eat healthy"
+                                        required></textarea>
+                                </label>
+                                <button class="create-entry-submit-btn">Submit</button>
+                            </form>
+                        </fieldset>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-
-    <div class="login-modal">
-        <div class="modal-content">
-            <span class="login-close-button">&times;</span>
-            <h2>Login</h2>
-            <div class="login-form-container">
-                <fieldset>
-                    <form role="form" class="login-form">
-                        <label class="login-username">Username
-                            <input type="text" required>
-                        </label>
-                        <label class="login-password">Password
-                            <input type="text" required>
-                        </label>
-                        <button class="login-form-btn">Login</button>
-                        <p class="login-error"></p>
-                        <p class="demo-account-text">Demo Account</br> Username: Demo/Password: Demo</p>
-                    </form>
-                </fieldset>
+            
+            <div class="edit-entry-modal">
+                <div class="modal-content">
+                    <span class="edit-entry-close-button">&times;</span>
+                    <h2>Edit Entry</h2>
+                    <div class="edit-entry-form-container">
+                        <fieldset>
+                            <form class="edit-entry-form">
+                                <input type="hidden" class="edit-selected-id">
+                                <label class="image-url-label">Image url
+                                    <input type="text" class="edit-image-url-input" required>
+                                </label>
+                                <label class="edit-entry-form-label">The meaning of this image is..
+                                    <textarea class="edit-meaning-image-input" placeholder="it reminds me that family is the most important thing" required></textarea>
+                                </label>
+                                <label class="edit-entry-form-label">I am grateful for..
+                                    <textarea class="edit-grateful-input" placeholder="my health, my friends and family" required></textarea>
+                                </label>
+                                <label class="edit-entry-form-label">My best self today is..
+                                    <textarea class="edit-bestself-input" placeholder="someone who is compassionate, kind, and finds time to exercise and eat healthy"
+                                        required></textarea>
+                                </label>
+                                <button class="edit-entry-submit-btn">Submit</button>
+                            </form>
+                        </fieldset>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-
-    <div class="signup-modal">
-        <div class="modal-content">
-            <span class="signup-close-button">&times;</span>
-            <h2>Signup</h2>
-            <div class="signup-form-container">
-                <fieldset>
-                    <form role="form" class="signup-form">
-                        <label>Full Name
-                            <input type="text" required>
-                        </label>
-                        <label>Username
-                            <input type="text" required>
-                        </label>
-                        <label>Password
-                            <input type="text" required>
-                        </label>
-                        <p class="signup-error"></p>
-                        <button class="signup-form-btn">Submit</button>
-                    </form>
-                </fieldset>
+            
+            <div class="signup-modal">
+                <div class="modal-content">
+                    <span class="signup-close-button">&times;</span>
+                    <h2>Signup</h2>
+                    <div class="signup-form-container">
+                        <fieldset>
+                            <form role="form" class="signup-form">
+                                <label>Full Name
+                                    <input type="text" required>
+                                </label>
+                                <label>Username
+                                    <input type="text" required>
+                                </label>
+                                <label>Password
+                                    <input type="password" required>
+                                </label>
+                                <p class="signup-error"></p>
+                                <button class="signup-form-btn">Submit</button>
+                            </form>
+                        </fieldset>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="index.js"></script>
-</body>
+        </main>
 
+        <footer role="contentinfo">
+            <div class="footer-info">
+                <p>Built by Kevin Asuncion. Background image designed by Freepik</p>
+            </div>
+            <a target="_blank" href="https://github.com/KevinAsuncion/tune" class="git-hub-link" aria-label="github">
+                <i class="fab fa-github"></i>
+            </a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="index.js"></script>
+    </body>
 </html>

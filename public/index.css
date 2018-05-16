@@ -14,6 +14,8 @@ body {
 }
 .create-new-entry-btn {
     font-weight: bold; 
+    margin-top: 50px;
+    border:none; 
 }
 
 .header-bar {
@@ -21,6 +23,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background: white;
+    border: none; 
 }
 
 .nav-links  {
@@ -35,17 +38,18 @@ body {
 }
 
 .nav-links:hover  {
-    color: rgb(49, 68, 119);
+    color: rgb(73, 73, 73);
 }
 
 .main-container {
     color: black;
     display: flex;
     justify-content: center;
-    /* background: #294282; */
-    /* flex: 1 0 auto; */
+    background: #5b739e;
+    color: white; 
     flex-direction: column;
-    /* width: 100%; */
+    padding-bottom: 70px;
+    min-height: 500px;
 }
 
 .hero {
@@ -154,9 +158,8 @@ textarea {
 }
 
 .create-new-entry-btn {
-    color: white;
-    border: 2px solid rgb(31, 58, 104);
-    background-color: rgb(31, 58, 104);
+    color: rgb(31, 58, 104);
+    background-color: white;
     border-radius: 3px;
     font-weight: bold;
     height: 35px;
@@ -168,30 +171,34 @@ textarea {
 .login-form-btn, .signup-form-btn, .create-entry-submit-btn,
 .edit-entry-submit-btn{
     color: white;
-    border: 2px solid rgb(31, 58, 104);
     background-color: rgb(31, 58, 104);
     border-radius: 3px;
     font-weight: bold;
     height: 35px;
     width: 100%;
+    border: none; 
     cursor: pointer;
 }
 
 .edit-entry-btn, .delete-entry-btn, .cancel-entry-btn {
-    color: white;
-    border: 2px solid rgb(31, 58, 104);
-    background-color: rgb(31, 58, 104);
+    color:rgb(31, 58, 104);
+    background-color: rgb(255, 255, 255);
     border-radius: 3px;
     font-weight: bold;
     height: 35px;
+    border: none;
     width: 30%;
     cursor: pointer;
 }
 
-.login-form-btn:hover, .signup-form-btn:hover,.create-entry-submit-btn:hover, 
-.create-new-entry-btn:hover, .edit-entry-submit-btn:hover, .edit-entry-btn:hover, 
+.login-form-btn:hover,.signup-form-btn:hover, .create-entry-submit-btn:hover,.edit-entry-submit-btn:hover  {
+     background-color: rgba(28, 74, 133, 0.966)
+}
+
+ 
+.create-new-entry-btn:hover,.edit-entry-btn:hover, 
 .delete-entry-btn:hover, .cancel-entry-btn:hover {
-    background-color: rgb(43, 78, 133)
+    background-color: rgb(236, 236, 236)
 }
 
 .create-entry-form-label, .edit-entry-form-label {
@@ -200,10 +207,24 @@ textarea {
 
 footer {
     width: 100%;
-    background: lightgray;
     text-align: center;
-    margin-top: 20px;
-    padding: 20px;
+    padding-bottom: 15px;
+}
+
+a {
+    color: black;
+}
+
+.git-hub-link:hover {
+    color: rgb(78, 78, 78);
+}
+
+.footer-info {
+    font-size: 14px;
+}
+
+i {
+    font-size: 30px;
 }
 
 .journal-entries-container {
@@ -229,9 +250,10 @@ footer {
 
 .journal-entry-date {
     text-align: center; 
-    background: rgb(31, 58, 104);
+    background: white;
+    font-weight: bold;
     padding: 5px; 
-    color: white; 
+    color: rgb(31, 58, 104);
 }
 
 .journal-entry-img {

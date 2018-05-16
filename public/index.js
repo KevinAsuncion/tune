@@ -160,7 +160,7 @@ function renderDashboardJournalEntries(entries) {
     let journalEntriesList = journalEntries.map((entry, index) => {
         return `
             <div class="journal-entry-card" data-id="${index}">
-                <img src="${entry.image_url}"/>
+                <img src="${entry.image_url}" alt="image-${index}"/>
                 <p class="journal-entry-date">${entry.created_date}</p>
                 <div class="overlay">
                 <button class="entry-view-btn">View</button>
@@ -196,9 +196,9 @@ function renderViewEntry(selectedId) {
         <p class="best-self-entry"> ${selectedEntry.best_self}</p>
     `)
     $('html,body').animate({
-        scrollTop: $(".view-entry").offset().top
+        scrollTop: $(".main-container").offset().top
     }, 'slow');
-    $('.create-new-entry-btn').toggle();//////////
+    $('.create-new-entry-btn').toggle();
     toggleEditAndDeleteButtons();
     $('.journal-entries-container').toggle();
 
