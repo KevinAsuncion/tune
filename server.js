@@ -10,9 +10,11 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+
 // const passport = require('passport');
 
 const {PORT, DATABASE_URL} = require('./config');
+
 //Local Strategy & JWT Strategy 
 // const {localStrategy,jwtStrategy} = require('./auth')
 //****************************************************
@@ -46,23 +48,25 @@ app.use(function (req, res, next) {
 });
 
 
-app.use('*', (req, res) => {
-    res.status(404).json({ message: 'Not Found' });
-});
-
 //****************************************************
 // Routes
 //****************************************************
 
-
+const { router: usersRouter } = require('./users/router');
+const { router: authRouter } = require('./auth/router');
+const { router: entriesRouter } = require('./entriesRoutes');
 
 //****************************************************
 // PREFIXES
 //****************************************************
 
-// app.use('/users', usersRouter);
-// app.use('/auth', authRouter);
-// app.use('/entries', entriesRouter);
+app.use('/users', usersRouter);
+app.use('/auth', authRouter);
+app.use('/entries', entriesRouter);
+
+app.use('*', (req, res) => {
+    res.status(404).json({ message: 'Not Found' });
+});
 
 //****************************************************
 // Test Server 
