@@ -6,8 +6,7 @@ const jsonParser = bodyParser.json();
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-const localStrategy = require('./auth/index').localStrategy;
-const jwtStrategy = require('./auth/index').jwtStrategy;
+const { localStrategy, jwtStrategy } = require('./auth')
 const passport = require('passport');
 mongoose.Promise = global.Promise;
 

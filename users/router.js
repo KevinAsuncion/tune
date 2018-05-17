@@ -86,7 +86,7 @@ router.post('/', jsonParser, (req, res) => {
     }
 
     let { username, password, fullname = '' } = req.body;
-   
+   ///////////////// - come back to this and fix full Name
     firstName = firstName.trim();
     lastName = lastName.trim();
 

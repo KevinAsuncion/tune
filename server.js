@@ -10,29 +10,29 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-
-// const passport = require('passport');
-
+const passport = require('passport');
 const {PORT, DATABASE_URL} = require('./config');
 
-//Local Strategy & JWT Strategy 
-// const {localStrategy,jwtStrategy} = require('./auth')
-//****************************************************
+// Local Strategy & JWT Strategy 
+
+const {localStrategy,jwtStrategy} = require('./auth')
+
+// ****************************************************
 // Passport
-//****************************************************
-// passport.use(localStrategy);
-// passport.use(jwtStrategy);
-// const jwtAuth = passport.authenticate("jwt", { session: false });
+// ****************************************************
+
+passport.use(localStrategy);
+passport.use(jwtStrategy);
+const jwtAuth = passport.authenticate("jwt", { session: false });
 
 const app = express();
+app.use(morgan('common'));
+app.use(express.static('public'));
 
 //****************************************************
 // Mongoose 
 //****************************************************
 mongoose.Promise = global.Promise; 
-
-app.use(morgan('common'));
-app.use(express.static('public'));
 
 //****************************************************
 // CORS
@@ -47,7 +47,6 @@ app.use(function (req, res, next) {
     next();
 });
 
-
 //****************************************************
 // Routes
 //****************************************************
@@ -55,10 +54,6 @@ app.use(function (req, res, next) {
 const { router: usersRouter } = require('./users/router');
 const { router: authRouter } = require('./auth/router');
 const { router: entriesRouter } = require('./entriesRoutes');
-
-//****************************************************
-// PREFIXES
-//****************************************************
 
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
