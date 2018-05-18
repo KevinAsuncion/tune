@@ -76,7 +76,7 @@ router.post('/', jwtAuth, jsonParser, (req, res) => {
 });
 
 //Update entry by id
-router.put('/:id', (req, res) => {
+router.put('/:id', jwtAuth, jsonParser, (req, res) => {
     if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
         res.status(400).json({
             error: "Request path id and request body id values must match"
@@ -103,7 +103,7 @@ router.put('/:id', (req, res) => {
 
 
 //Delete entry by id 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', jwtAuth, (req, res) => {
     Entry.findByIdAndRemove(req.params.id)
         .then(() => {
             res.status(204).end();
@@ -113,6 +113,12 @@ router.delete('/:id', (req, res) => {
             res.status(500).json({ error: 'Internal server error' });
         });
 });
+
+///// Just to check if the JWT is working ////////
+router.get('/protected', jwtAuth, (req, res) => {
+    res.send({message: 'hello'});
+});
+///////////////////////////////////////////////////
 
 module.exports = { router };
 
