@@ -17,7 +17,8 @@ const router = express.Router();
 
 const jwtAuth = passport.authenticate("jwt", { session: false });
 
-//Get the entries of a specific user
+
+// Get the entries of a specific user 
 router.get('/', jwtAuth, (req, res) => {
     Entry
         .find({user: req.user.id})
@@ -113,12 +114,6 @@ router.delete('/:id', jwtAuth, (req, res) => {
             res.status(500).json({ error: 'Internal server error' });
         });
 });
-
-///// Just to check if the JWT is working ////////
-router.get('/protected', jwtAuth, (req, res) => {
-    res.send({message: 'hello'});
-});
-///////////////////////////////////////////////////
 
 module.exports = { router };
 
