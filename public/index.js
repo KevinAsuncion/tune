@@ -86,6 +86,66 @@ function toggleLoginModal() {
     $('.login-modal').toggleClass('show-modal')
 }
 
+
+function listenLoginSubmit() {
+    $('.login-form').submit(function (e) {
+        e.preventDefault();
+        const username = $('#js-login-username').val();
+        const password = $('#js-login-password').val();
+        $('#js-login-username').val('');
+        $('#js-login-password').val('');
+
+        const userCreds = {
+            username: username,
+            password: password
+        }
+
+        login(userCreds)
+
+    })
+}
+
+function login(userCreds) {
+    $.ajax({
+        url: 'auth/login',
+        method: 'POST',
+        data: JSON.stringify(userCreds),
+        crossDomain: true,
+        contentType: 'application/json',
+        success: validLogin,
+        error: invalidLogin
+    })
+
+}
+
+function validLogin(res) {
+    localStorage.setItem('Token', res.authToken); 
+    //hide and show the correct elements
+    //showJournalDashBoard
+}
+
+function invalidLogin() {
+    $('.login-error').text('login error');
+    //make sure to toggle it off when either user closes login or resubmits 
+}
+
+function showJournalDashboard() {
+    //show logout
+    //hide login/signup, welcome page hero
+    //show main container with dashboard 
+    //grab entries 
+    //render the jounral entries 
+}
+
+function logOut(){
+    $('.logout-link').on('click', function(){
+        localStorage.removeItem('Token');
+        //hide main container, logout link 
+        //show login, signup links 
+        //show hero welcome and footer 
+    })
+}
+
 //----------------Sign Up------------------//
 
 
@@ -104,6 +164,49 @@ function listenSignUpCloseButton() {
 function toggleSignUpModal() {
     $('.signup-modal').toggleClass('show-modal')
 }
+
+function listenSignUpSubmit(){
+    $('.signup-form').submit(function(e){
+        e.preventDefault();
+        const username = $('#js-signup-username').val();
+        const password = $('#js-signup-password').val();
+        const fullname = $('#js-signup-fullname').val();
+        $('#js-signup-username').val('');
+        $('#js-signup-password').val('');
+        $('#js-signup-fullname').val('');
+    
+        const userInfo = {
+            username: username,
+            password: password,
+            fullname: fullname
+        }
+
+        signup(userInfo);
+    })
+}
+
+function signup(userInfo){
+    $.ajax({
+        url: '/users',
+        method: 'POST',
+        data: JSON.stringify(userInfo),
+        crossDomain: true,
+        contentType: 'application/json',
+        success: validSignup,
+        error: invalidSignup(err)
+    })
+
+}
+
+// function validSignup(){
+//     //send them to toggle signup and toggle login
+//     //remove warning once successful signup 
+// }
+
+function invalidSignup(err){
+    console.log(err)
+}
+
 
 //----------------Create Entry------------------//
 
@@ -318,7 +421,10 @@ function startApp() {
     listenEditButton();
     listenEditEntrySubmitButton();
     listenEditCloseButton();
-    listenCancelButton()
+    listenCancelButton();
+    listenLoginSubmit();
+    listenSignUpSubmit();
+    logOut();
 }
 
 $(startApp)

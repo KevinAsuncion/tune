@@ -251,8 +251,8 @@ describe('Entries API', function(){
                     expect(entry.grateful).to.equal(updateData.grateful)
                     expect(entry.photo_meaning).to.equal(updateData.photo_meaning)
                     expect(entry.best_self).to.equal(updateData.best_self)
-                })
-        })
-    })
+                });
+        });
+    });
 
 })

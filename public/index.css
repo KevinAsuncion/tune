@@ -110,6 +110,10 @@ body {
     cursor: pointer;
 }
 
+.login-error {
+    color: red; 
+}
+
 .navigation-links {
    list-style: none; 
    display: flex; 
