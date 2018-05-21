@@ -9,8 +9,8 @@ const mongoose = require('mongoose');
 const { localStrategy, jwtStrategy } = require('./auth')
 const passport = require('passport');
 mongoose.Promise = global.Promise;
-
-const { DATABASE_URL, PORT } = require('./config');
+//added jwt_secret to see if it helps with travis ci
+const { DATABASE_URL, PORT, JWT_SECRET } = require('./config');
 const { Entry } = require('./entry-model');
 const { User } = require('./users')
 

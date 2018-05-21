@@ -11,11 +11,11 @@ const jsonParser = bodyParser.json();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const passport = require('passport');
-const {PORT, DATABASE_URL} = require('./config');
+const { PORT, DATABASE_URL } = require('./config');
 
 // Local Strategy & JWT Strategy 
 
-const {localStrategy,jwtStrategy} = require('./auth')
+const { localStrategy, jwtStrategy } = require('./auth')
 
 // ****************************************************
 // Passport
@@ -23,6 +23,7 @@ const {localStrategy,jwtStrategy} = require('./auth')
 
 passport.use(localStrategy);
 passport.use(jwtStrategy);
+
 const jwtAuth = passport.authenticate("jwt", { session: false });
 
 const app = express();
