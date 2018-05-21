@@ -24,7 +24,7 @@ const { localStrategy, jwtStrategy } = require('./auth')
 passport.use(localStrategy);
 passport.use(jwtStrategy);
 
-const jwtAuth = passport.authenticate("jwt", { session: false });
+const jwtAuth = passport.authenticate('jwt', { session: false });
 
 const app = express();
 app.use(morgan('common'));
@@ -81,7 +81,7 @@ function runServer(databaseUrl, port = PORT) {
                     console.log(`Your app is listening on port ${port}`);
                     resolve();
                 })
-                .on("error", err => {
+                .on('error', err => {
                     mongoose.disconnect();
                     reject(err);
                 });
@@ -92,7 +92,7 @@ function runServer(databaseUrl, port = PORT) {
 function closeServer() {
     return mongoose.disconnect().then(() => {
         return new Promise((resolve, reject) => {
-            console.log("Closing server");
+            console.log('Closing server');
             server.close(err => {
                 if (err) {
                     return reject(err);

@@ -4,7 +4,7 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
-const faker = require("faker");
+const faker = require('faker');
 const { app, runServer, closeServer } = require('../server');
 const { JWT_SECRET, TEST_DATABASE_URL } = require('../config');
 const { User } = require('../users');
@@ -203,8 +203,8 @@ describe('Entries API', function(){
         });
     });
 
-    describe("DELETE endpoint", function () {
-        it("should delete entry by id", function () {
+    describe('DELETE endpoint', function () {
+        it('should delete entry by id', function () {
             let entry;
 
             return Entry.findOne()

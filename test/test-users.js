@@ -5,7 +5,7 @@ const chaiHttp = require('chai-http');
 const mongoose = require('mongoose');
 const { app, runServer, closeServer } = require('../server');
 const { TEST_DATABASE_URL } = require('../config');
-const { User } = require("../users");
+const { User } = require('../users');
 
 const expect = chai.expect;
 
@@ -102,7 +102,7 @@ describe('Users endpoint', function () {
             it('Should reject users with non-string full name', function () {
                 return chai
                     .request(app)
-                    .post("/users")
+                    .post('/users')
                     .send({
                         username,
                         password,
@@ -178,7 +178,7 @@ describe('Users endpoint', function () {
                     .post('/users')
                     .send({
                         username,
-                        password: "123456789",
+                        password: '123456789',
                         fullname
                     })
                     .then(res => {

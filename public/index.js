@@ -143,8 +143,8 @@ function showJournalDashboard() {
 function setUpHeaders() {
     let token = localStorage.getItem('Token')
     $.ajaxSetup({
-        dataType: "json",
-        contentType: "application/json",
+        dataType: 'json',
+        contentType: 'application/json',
         headers: {
             Authorization: `Bearer ${token}`  
         }
@@ -365,7 +365,7 @@ function renderViewEntry(data) {
         <p class="best-self-entry"> ${data.best_self}</p>
     `)
     $('html,body').animate({
-        scrollTop: $(".main-container").offset().top
+        scrollTop: $('.main-container').offset().top
     }, 'slow');
     $('.create-new-entry-btn').toggle();
     toggleEditAndDeleteButtons();
@@ -516,7 +516,6 @@ function startApp() {
     listenSignUpCloseButton();
     listenCreateEntry();
     listenCreateEntryCloseButton();
-    // renderDashboardJournalEntries(ENTRY);
     createNewJournalEntry();
     getTheId();
     listenDeleteButton();

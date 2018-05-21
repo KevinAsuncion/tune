@@ -9,14 +9,13 @@ const mongoose = require('mongoose');
 const { localStrategy, jwtStrategy } = require('./auth')
 const passport = require('passport');
 mongoose.Promise = global.Promise;
-//added jwt_secret to see if it helps with travis ci
-const { DATABASE_URL, PORT, JWT_SECRET } = require('./config');
+const { DATABASE_URL, PORT } = require('./config');
 const { Entry } = require('./entry-model');
 const { User } = require('./users')
 
 const router = express.Router();
 
-const jwtAuth = passport.authenticate("jwt", { session: false });
+const jwtAuth = passport.authenticate('jwt', { session: false });
 
 
 // Get the entries of a specific user
@@ -56,7 +55,7 @@ router.get('/', jwtAuth, (req, res) => {
 // });
 
 //get entries of specific user of specific id 
-router.get("/:id", jwtAuth, (req, res) => {
+router.get('/:id', jwtAuth, (req, res) => {
     Entry
         .findById(req.params.id)
         .then(entry => {
@@ -100,7 +99,7 @@ router.post('/', jwtAuth, jsonParser, (req, res) => {
 router.put('/:id', jwtAuth, jsonParser, (req, res) => {
     if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
         res.status(400).json({
-            error: "Request path id and request body id values must match"
+            error: 'Request path id and request body id values must match'
         });
     }
 
