@@ -44,7 +44,7 @@
             </div>
         </section>
         
-        <main role="main">
+        <main role="main" hidden>
             <section class="journal">
                 <div class="main-container" aria-live="assertive">
                     <div class="create-new-entry">
@@ -73,7 +73,15 @@
                     </div>
                 </div>
             </section>
+        </main>
 
+        <footer role="contentinfo">
+            <div class="footer-info">
+                <p>Built by Kevin Asuncion. Background image designed by Freepik</p>
+            </div>
+            <a target="_blank" href="https://github.com/KevinAsuncion/tune" class="git-hub-link" aria-label="github">
+                <i class="fab fa-github"></i>
+            </a>
             <div class="login-modal">
                 <div class="modal-content">
                     <span class="login-close-button" aria-label="close">&times;</span>
@@ -82,7 +90,7 @@
                         <fieldset>
                             <form role="form" class="login-form">
                                 <label class="login-username">Username
-                                    <input type="text" name="username"  id="js-login-username" required>
+                                    <input type="text" name="username" id="js-login-username" required>
                                 </label>
                                 <label class="login-password">Password
                                     <input type="password" name="password" id="js-login-password" required>
@@ -106,7 +114,8 @@
                                     <input type="text" class="image-url-input" name="image_url" required>
                                 </label>
                                 <label class="create-entry-form-label">The meaning of this image is..
-                                    <textarea class="meaning-image-input" name="meaningful_image" placeholder="it reminds me that family is the most important thing" required></textarea>
+                                    <textarea class="meaning-image-input" name="meaningful_image" placeholder="it reminds me that family is the most important thing"
+                                        required></textarea>
                                 </label>
                                 <label class="create-entry-form-label">I am grateful for..
                                     <textarea class="grateful-input" name="grateful" placeholder="my health, my friends and family" required></textarea>
@@ -134,7 +143,8 @@
                                     <input type="text" name="image_url" class="edit-image-url-input" required>
                                 </label>
                                 <label class="edit-entry-form-label">The meaning of this image is..
-                                    <textarea class="edit-meaning-image-input" name="meaningful_image" placeholder="it reminds me that family is the most important thing" required></textarea>
+                                    <textarea class="edit-meaning-image-input" name="meaningful_image" placeholder="it reminds me that family is the most important thing"
+                                        required></textarea>
                                 </label>
                                 <label class="edit-entry-form-label">I am grateful for..
                                     <textarea class="edit-grateful-input" name="grateful" placeholder="my health, my friends and family" required></textarea>
@@ -173,16 +183,6 @@
                     </div>
                 </div>
             </div>
-
-        </main>
-
-        <footer role="contentinfo">
-            <div class="footer-info">
-                <p>Built by Kevin Asuncion. Background image designed by Freepik</p>
-            </div>
-            <a target="_blank" href="https://github.com/KevinAsuncion/tune" class="git-hub-link" aria-label="github">
-                <i class="fab fa-github"></i>
-            </a>
         </footer>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>

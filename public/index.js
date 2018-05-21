@@ -1,63 +1,63 @@
 'use strict'
 
-const ENTRY = [
-    {
-        image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
-        photo_meaning: '0 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        grateful: '0 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        best_self: '0 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        created_date: moment().format("dddd, MMMM Do YYYY"),
-    },
-    {
-        image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
-        photo_meaning: '1 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        grateful: '1 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        best_self: '1 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        created_date: moment().format("dddd, MMMM Do YYYY"),
-    },
-    {
-        image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
-        photo_meaning: '2 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        grateful: '2 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        best_self: '2 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        created_date: moment().format("dddd, MMMM Do YYYY"),
-    },
-    {
-        image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
-        photo_meaning: '3 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        grateful: '3 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        best_self: '3 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        created_date: moment().format("dddd, MMMM Do YYYY"),
-    },
-    {
-        image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
-        photo_meaning: '4 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        grateful: '4 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        best_self: '4 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        created_date: moment().format("dddd, MMMM Do YYYY"),
-    },
-    {
-        image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
-        photo_meaning: '5 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        grateful: '5 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        best_self: '5 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        created_date: moment().format("dddd, MMMM Do YYYY"),
-    },
-    {
-        image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
-        photo_meaning: '6 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        grateful: '6 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        best_self: '6 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        created_date: moment().format("dddd, MMMM Do YYYY"),
-    },
-    {
-        image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
-        photo_meaning: '7 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        grateful: '7 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        best_self: '7 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
-        created_date: moment().format("dddd, MMMM Do YYYY"),
-    }
-]
+// const ENTRY = [
+//     {
+//         image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
+//         photo_meaning: '0 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         grateful: '0 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         best_self: '0 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         created_date: moment().format("dddd, MMMM Do YYYY"),
+//     },
+//     {
+//         image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
+//         photo_meaning: '1 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         grateful: '1 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         best_self: '1 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         created_date: moment().format("dddd, MMMM Do YYYY"),
+//     },
+//     {
+//         image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
+//         photo_meaning: '2 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         grateful: '2 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         best_self: '2 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         created_date: moment().format("dddd, MMMM Do YYYY"),
+//     },
+//     {
+//         image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
+//         photo_meaning: '3 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         grateful: '3 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         best_self: '3 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         created_date: moment().format("dddd, MMMM Do YYYY"),
+//     },
+//     {
+//         image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
+//         photo_meaning: '4 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         grateful: '4 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         best_self: '4 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         created_date: moment().format("dddd, MMMM Do YYYY"),
+//     },
+//     {
+//         image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
+//         photo_meaning: '5 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         grateful: '5 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         best_self: '5 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         created_date: moment().format("dddd, MMMM Do YYYY"),
+//     },
+//     {
+//         image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
+//         photo_meaning: '6 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         grateful: '6 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         best_self: '6 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         created_date: moment().format("dddd, MMMM Do YYYY"),
+//     },
+//     {
+//         image_url: 'https://images.ctfassets.net/v3n26e09qg2r/5AIMm6UcI8cYIWMsU8AqEq/d88942bfb655b82e1e2edfbd1ea5dcb8/About-02-1008x1008.svg',
+//         photo_meaning: '7 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         grateful: '7 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         best_self: '7 Spicy jalapeno brisket sint leberkas lorem turducken culpa. Aliqua cupidatat duis filet mignon, deserunt leberkas tongue turkey occaecat enim shank meatloaf ut.',
+//         created_date: moment().format("dddd, MMMM Do YYYY"),
+//     }
+// ]
 
 
 //-------------Hero------------------//
@@ -120,8 +120,10 @@ function login(userCreds) {
 
 function validLogin(res) {
     localStorage.setItem('Token', res.authToken); 
-    //hide and show the correct elements
-    //showJournalDashBoard
+    setUpHeaders();
+    showJournalDashboard();
+    getJournalEntries(); 
+    //make get request to '/entries' associated with the user
 }
 
 function invalidLogin() {
@@ -130,19 +132,51 @@ function invalidLogin() {
 }
 
 function showJournalDashboard() {
-    //show logout
-    //hide login/signup, welcome page hero
-    //show main container with dashboard 
-    //grab entries 
-    //render the jounral entries 
+    $('.login-error').text('');
+    $('.login-modal').toggleClass('show-modal')
+    $('.welcome-page').toggle();
+    $('main').toggle();
+    $('.login-link .signup-link').toggle();
+    $('.logout-link').toggle();
+}
+
+function setUpHeaders() {
+    let token = localStorage.getItem('Token')
+    $.ajaxSetup({
+        dataType: "json",
+        contentType: "application/json",
+        headers: {
+            Authorization: `Bearer ${token}`  
+        }
+    });
+}
+
+function getJournalEntries(){ 
+    $.ajax({
+        url: '/entries',
+        method: 'GET',
+        data: JSON.stringify(),
+        crossDomain: true,
+        contentType: 'application/json',
+        success: function (data){
+            renderDashboardJournalEntries(data);
+        },
+        error: handleJournalEntriesError
+    })
+}
+
+function handleJournalEntriesError(){
+    console.log('error')
 }
 
 function logOut(){
     $('.logout-link').on('click', function(){
         localStorage.removeItem('Token');
-        //hide main container, logout link 
-        //show login, signup links 
-        //show hero welcome and footer 
+        $('.login-link .signup-link').toggle();
+        $('.logout-link').toggle();
+        $('main').toggle();
+        $('.welcome-page').toggle();
+        $('.journal-entries-container').empty();
     })
 }
 
@@ -193,18 +227,19 @@ function signup(userInfo){
         crossDomain: true,
         contentType: 'application/json',
         success: validSignup,
-        error: invalidSignup(err)
+        error: function (res, status, error) {
+            const err = JSON.parse(res.responseText);
+            $('.signup-error').text(`${err.location} ${err.message}`);
+        }
     })
 
 }
 
-// function validSignup(){
-//     //send them to toggle signup and toggle login
-//     //remove warning once successful signup 
-// }
-
-function invalidSignup(err){
-    console.log(err)
+function validSignup(){
+    $('.signup-modal').toggleClass('show-modal')
+    $('.login-modal').toggleClass('show-modal')
+    $('.signup-error').text('')
+    $('.login-error').text('Signup successful, please login');
 }
 
 
@@ -237,33 +272,51 @@ function createNewJournalEntry() {
         $('.meaning-image-input').val('');
         $('.grateful-input').val('');
         $('.bestself-input').val('');
-        ENTRY.push({
+        let newEntry = {
             image_url: image_url,
             photo_meaning: meaningful_image,
             grateful: grateful,
             best_self: bestSelf,
-            created_date: moment().format("dddd, MMMM Do YYYY"),
-        })
-        renderDashboardJournalEntries(ENTRY);
+        }
         toggleCreateEntryModal();
         $('.entry-container').empty();
         if ($('.cancel-entry-btn, .edit-entry-btn, .delete-entry-btn').is(':visible')) {
             $('.cancel-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
         }
+        postNewEntry(newEntry);
     })
 }
 
-function renderDashboardJournalEntries(entries) {
-    let journalEntries = entries.map(entry => {
+function postNewEntry(newEntry){
+    $.ajax({
+        url: '/entries',
+        method: 'POST',
+        data: JSON.stringify(newEntry),
+        crossDomain: true,
+        contentType: 'application/json',
+        success: getJournalEntries,
+        error: handleNewEntryError 
+    })
+}
+
+function handleNewEntryError(){
+    console.log('error');
+}
+
+function renderDashboardJournalEntries(data) {
+    
+    let journalEntries = data.entries.map(entry => {
         return {
+            id: entry.id,
             image_url: entry.image_url,
-            created_date: entry.created_date,
+            created_date: moment(entry.created_date).format("dddd, MMMM Do YYYY"),
         };
     });
-    let journalEntriesList = journalEntries.map((entry, index) => {
+    
+    let journalEntriesList = journalEntries.map( entry => {
         return `
-            <div class="journal-entry-card" data-id="${index}">
-                <img src="${entry.image_url}" alt="image-${index}"/>
+            <div class="journal-entry-card" data-id="${entry.id}">
+                <img src="${entry.image_url}" alt="image-${entry.id}"/>
                 <p class="journal-entry-date">${entry.created_date}</p>
                 <div class="overlay">
                 <button class="entry-view-btn">View</button>
@@ -276,27 +329,40 @@ function renderDashboardJournalEntries(entries) {
 
 function getTheId() {
     $('.journal-entries-container').on('click', '.entry-view-btn', e => {
-        const selectedId = parseInt($(e.currentTarget).parents('.journal-entry-card').attr('data-id'));
-        renderViewEntry(selectedId);
+        const selectedId = $(e.currentTarget).parents('.journal-entry-card').attr('data-id');
+        makeViewRequest(selectedId);
     })
 }
 
-function renderViewEntry(selectedId) {
-    const selectedEntry = ENTRY.find((entry, index) => {
-        return index === selectedId;
+function makeViewRequest(id){
+    $.ajax({
+        url: `/entries/${id}`,
+        method: 'GET',
+        crossDomain: true,
+        contentType: 'application/json',
+        success: function(data){
+            renderViewEntry(data);
+        },
+        error: handleViewError
     })
+}
 
+function handleViewError(){
+    console.log('error')
+}
+
+function renderViewEntry(data) {
 
     $('.entry-container').html(
         `
-      <span id="selected-id" data-id="${selectedId}"></span>
-      <img src="${selectedEntry.image_url}" alt="meaningful-photo" class="meaningful-image-img"/>
+      <span id="selected-id" data-id="${data.id}"></span>
+      <img src="${data.image_url}" alt="meaningful-photo" class="meaningful-image-img"/>
         <h2 class="entry-meaningful-photo-heading">This photo means..</h2>
-        <p class="meaningful-photo-entry">${selectedEntry.photo_meaning} </p>
+        <p class="meaningful-photo-entry">${data.photo_meaning} </p>
         <h2 class="entry-grateful-heading">I am grateful for..</h2>
-        <p class="grateful-entry">${selectedEntry.grateful} </p>
+        <p class="grateful-entry">${data.grateful} </p>
         <h2 class="entry-best-self-heading">My best self is..</h2>
-        <p class="best-self-entry"> ${selectedEntry.best_self}</p>
+        <p class="best-self-entry"> ${data.best_self}</p>
     `)
     $('html,body').animate({
         scrollTop: $(".main-container").offset().top
@@ -304,7 +370,6 @@ function renderViewEntry(selectedId) {
     $('.create-new-entry-btn').toggle();
     toggleEditAndDeleteButtons();
     $('.journal-entries-container').toggle();
-
 }
 
 function toggleEditAndDeleteButtons() {
@@ -319,12 +384,18 @@ function toggleEditAndDeleteButtons() {
 function listenEditButton() {
     $('.edit-entry-btn').on('click', e => {
         toggleEditModal();
-        const selectedId = parseInt($(e.currentTarget).parents('.view-entry').find('#selected-id').attr('data-id'));
-        $('.edit-image-url-input').val(ENTRY[selectedId].image_url);
-        $('.edit-meaning-image-input').val(ENTRY[selectedId].photo_meaning);
-        $('.edit-grateful-input').val(ENTRY[selectedId].grateful);
-        $('.edit-bestself-input').val(ENTRY[selectedId].best_self);
-        $('.edit-selected-id').val(selectedId);
+
+       const image_url = $('.meaningful-image-img').attr('src');
+       const meaningful_photo = $('.meaningful-photo-entry').text();
+       const grateful = $('.grateful-entry').text();
+       const best_self =  $('.best-self-entry').text();
+
+        $('.edit-image-url-input').val(image_url);
+        $('.edit-meaning-image-input').val(meaningful_photo);
+        $('.edit-grateful-input').val(grateful);
+        $('.edit-bestself-input').val(best_self);
+
+        
     });
 }
 
@@ -332,30 +403,45 @@ function listenEditButton() {
 function listenEditEntrySubmitButton() {
     $('.edit-entry-form').submit(e => {
         e.preventDefault();
-        const selectedId = $('.edit-selected-id').val();
+
         const updated_image_url = $('.edit-image-url-input').val();
         const updated_meaning_image = $('.edit-meaning-image-input').val();
         const updated_grateful = $('.edit-grateful-input').val();
         const updated_best_self = $('.edit-bestself-input').val();
-        const updated_created_date = moment().format("dddd, MMMM Do YYYY");
 
+        const selectedId = $('#selected-id').attr('data-id');
         const updatedEntry = {
+            id: selectedId,
             image_url: updated_image_url,
             photo_meaning: updated_meaning_image,
             grateful: updated_grateful,
             best_self: updated_best_self,
-            created_date: updated_created_date
         }
 
-        ENTRY.splice(selectedId, 1, updatedEntry);
-        renderDashboardJournalEntries(ENTRY);
         toggleEditModal();
         $('.entry-container').empty();
         $('.cancel-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
         $('.journal-entries-container').toggle();
-        $('.create-new-entry-btn').toggle(); /////////////
+        $('.create-new-entry-btn').toggle(); 
+        updateEntryRequest(updatedEntry)
     })
 
+}
+
+function updateEntryRequest(updatedEntry){
+    $.ajax({
+        url: `/entries/${updatedEntry.id}`,
+        method: 'PUT',
+        data: JSON.stringify(updatedEntry),
+        crossDomain: true,
+        contentType: 'application/json',
+        success: getJournalEntries,
+        error: handleEditError
+    })
+}
+
+function handleEditError(){
+    console.log('error')
 }
 
 function listenEditCloseButton() {
@@ -392,15 +478,31 @@ function listenCancelButton() {
 
 function listenDeleteButton() {
     $('.delete-entry-btn').on('click', e => {
-        const selectedId = parseInt($(e.currentTarget).parents('.view-entry').find('#selected-id').attr('data-id'));
-        ENTRY.splice(selectedId, 1);
+        const selectedId = $('#selected-id').attr('data-id');
+        makeDeleteRequest(selectedId);
         $('.entry-container').empty();
         $('.cancel-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
-        renderDashboardJournalEntries(ENTRY);
         $('.journal-entries-container').toggle()
         $('.create-new-entry-btn').toggle();
     });
 }
+
+function makeDeleteRequest(id){
+    $.ajax({
+        url: `/entries/${id}`,
+        method: 'DELETE',
+        crossDomain: true,
+        contentType: 'application/json',
+        success: getJournalEntries,
+        error: handleDeleteError
+    })
+}
+
+function handleDeleteError(){
+    console.log('hello')
+}
+
+
 
 
 
@@ -414,7 +516,7 @@ function startApp() {
     listenSignUpCloseButton();
     listenCreateEntry();
     listenCreateEntryCloseButton();
-    renderDashboardJournalEntries(ENTRY);
+    // renderDashboardJournalEntries(ENTRY);
     createNewJournalEntry();
     getTheId();
     listenDeleteButton();

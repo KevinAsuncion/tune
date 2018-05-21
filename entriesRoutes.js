@@ -10,18 +10,22 @@ const { localStrategy, jwtStrategy } = require('./auth')
 const passport = require('passport');
 mongoose.Promise = global.Promise;
 
-const { DATABASE_URL, PORT } = require("./config");
-const { Entry } = require("./entry-model");
+const { DATABASE_URL, PORT } = require('./config');
+const { Entry } = require('./entry-model');
+const { User } = require('./users')
 
 const router = express.Router();
 
 const jwtAuth = passport.authenticate("jwt", { session: false });
 
 
-// Get the entries of a specific user 
+// Get the entries of a specific user
 router.get('/', jwtAuth, (req, res) => {
-    Entry
-        .find({user: req.user.id})
+    User
+        .findOne({username: req.user.username})
+        .then(user => {
+            return Entry.find({user})
+        })
         .then(entries => {
             res.json({
                 entries: entries.map(
@@ -34,6 +38,22 @@ router.get('/', jwtAuth, (req, res) => {
             res.status(500).json({ message: 'Internal server error' });
         });
 });
+
+// router.get('/', jwtAuth, (req, res) => {
+//     Entry
+//         .find({ user: req.user.id })
+//         .then(entries => {
+//             res.json({
+//                 entries: entries.map(
+//                     (entry) => entry.serialize())
+//             });
+//         })
+//         .catch(
+//         err => {
+//             console.error(err);
+//             res.status(500).json({ message: 'Internal server error' });
+//         });
+// });
 
 //get entries of specific user of specific id 
 router.get("/:id", jwtAuth, (req, res) => {
