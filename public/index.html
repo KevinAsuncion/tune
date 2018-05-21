@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Tune - Positive Journal App</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Positive psychology daily journal">
+        <meta name="description" content="A daily journal based on positive psychology">
         <link href="https://fonts.googleapis.com/css?family=Oxygen|Varela+Round" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
             crossorigin="anonymous">
@@ -36,11 +36,13 @@
 
         <section class="welcome-page" role="region">
             <div class="hero">
-                <p>Tune is a daily journal that helps you focus on the good things in your life.</p>
-                <button class="hero-signup-button">Signup</button>
-                <p class="hero-login-link">Already have an account?
-                    <span class="login-link">Login</span>
-                </p>
+                <div class="hero-content">
+                    <p>Tune is a daily journal that helps you focus on the good things in your life.</p>
+                    <button class="hero-signup-button">Signup</button>
+                    <p class="hero-login-link">Already have an account?
+                        <span class="login-link">Login</span>
+                    </p>
+                </div>
             </div>
         </section>
         
@@ -58,7 +60,7 @@
                         <div class="view-entry-btns">
                             <button class="edit-entry-btn" hidden>Edit</button>
                             <button class="delete-entry-btn" hidden>Delete</button>
-                            <button class="cancel-entry-btn" hidden>Cancel</button>
+                            <button class="back-entry-btn" hidden>Back</button>
                         </div>
                     </div>
 
@@ -77,13 +79,14 @@
 
         <footer role="contentinfo">
             <div class="footer-info">
-                <p>Built by Kevin Asuncion. Background image designed by Freepik</p>
+                <p>Built by Kevin Asuncion. Image designed by Freepik</p>
+                <a target="_blank" href="https://github.com/KevinAsuncion/tune" class="git-hub-link" aria-label="github">
+                    <i class="fab fa-github"></i>
+                </a>
             </div>
-            <a target="_blank" href="https://github.com/KevinAsuncion/tune" class="git-hub-link" aria-label="github">
-                <i class="fab fa-github"></i>
-            </a>
+            
             <div class="login-modal">
-                <div class="modal-content">
+                <div class="modal-content" aria-live="assertive">
                     <span class="login-close-button" aria-label="close">&times;</span>
                     <h2>Login</h2>
                     <div class="login-form-container">
@@ -97,14 +100,15 @@
                                 </label>
                                 <button class="login-form-btn">Login</button>
                                 <p class="login-error"></p>
-                                <p class="demo-account-text">Demo Account</br> Username: Demo/Password: Demo</p>
+                                <p class="signup-successful"></p>
+                                <p class="demo-account-text">Demo Account</br> Username: demousername</br> Password: demopassword</p>
                             </form>
                         </fieldset>
                     </div>
                 </div>
             </div>
             <div class="create-entry-modal">
-                <div class="modal-content">
+                <div class="modal-content" aria-live="assertive">
                     <span class="create-entry-close-button" aria-label="close">&times;</span>
                     <h2>Create New Entry</h2>
                     <div class="create-entry-form-container">
@@ -131,7 +135,7 @@
                 </div>
             </div>
             
-            <div class="edit-entry-modal">
+            <div class="edit-entry-modal" aria-live="assertive">
                 <div class="modal-content">
                     <span class="edit-entry-close-button" aria-label="close">&times;</span>
                     <h2>Edit Entry</h2>
@@ -160,7 +164,7 @@
                 </div>
             </div>
             
-            <div class="signup-modal">
+            <div class="signup-modal" aria-live="assertive">
                 <div class="modal-content">
                     <span class="signup-close-button" aria-label="close">&times;</span>
                     <h2>Signup</h2>
@@ -178,6 +182,7 @@
                                 </label>
                                 <p class="signup-error"></p>
                                 <button class="signup-form-btn">Submit</button>
+                                <p class="signup-help-text">Password must be between 10 and 72 characters long.  Username and password should not start or end with spaces.</p>
                             </form>
                         </fieldset>
                     </div>

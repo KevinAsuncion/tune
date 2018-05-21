@@ -76,7 +76,7 @@ describe('Users endpoint', function () {
                         expect(res).to.have.status(422);
                         expect(res.body.reason).to.equal('ValidationError');
                         expect(res.body.message).to.equal(
-                            'Incorrect field type: expected string'
+                            'incorrect field type: expected string'
                         );
                         expect(res.body.location).to.equal('username');
                     });
@@ -94,7 +94,7 @@ describe('Users endpoint', function () {
                         expect(res).to.have.status(422);
                         expect(res.body.reason).to.equal('ValidationError');
                         expect(res.body.message).to.equal(
-                            'Incorrect field type: expected string'
+                            'incorrect field type: expected string'
                         );
                         expect(res.body.location).to.equal('password');
                     });
@@ -112,7 +112,7 @@ describe('Users endpoint', function () {
                         expect(res).to.have.status(422);
                         expect(res.body.reason).to.equal('ValidationError');
                         expect(res.body.message).to.equal(
-                            'Incorrect field type: expected string'
+                            'incorrect field type: expected string'
                         );
                         expect(res.body.location).to.equal('fullname');
                     });
@@ -131,7 +131,7 @@ describe('Users endpoint', function () {
                         expect(res).to.have.status(422);
                         expect(res.body.reason).to.equal('ValidationError');
                         expect(res.body.message).to.equal(
-                            'Cannot start or end with whitespace'
+                            'cannot start or end with whitespace'
                         );
                         expect(res.body.location).to.equal('username');
                     });
@@ -149,7 +149,7 @@ describe('Users endpoint', function () {
                         expect(res).to.have.status(422);
                         expect(res.body.reason).to.equal('ValidationError');
                         expect(res.body.message).to.equal(
-                            'Cannot start or end with whitespace'
+                            'cannot start or end with whitespace'
                         );
                         expect(res.body.location).to.equal('password');
                     });
@@ -167,7 +167,7 @@ describe('Users endpoint', function () {
                         expect(res).to.have.status(422);
                         expect(res.body.reason).to.equal('ValidationError');
                         expect(res.body.message).to.equal(
-                            'Must be at least 1 characters long'
+                            'must be at least 1 characters long'
                         );
                         expect(res.body.location).to.equal('username');
                     });
@@ -185,7 +185,7 @@ describe('Users endpoint', function () {
                         expect(res).to.have.status(422);
                         expect(res.body.reason).to.equal('ValidationError');
                         expect(res.body.message).to.equal(
-                            'Must be at least 10 characters long'
+                            'must be at least 10 characters long'
                         );
                         expect(res.body.location).to.equal('password');
                     });
@@ -203,7 +203,7 @@ describe('Users endpoint', function () {
                         expect(res).to.have.status(422);
                         expect(res.body.reason).to.equal('ValidationError');
                         expect(res.body.message).to.equal(
-                            'Must be at most 72 characters long'
+                            'must be at most 72 characters long'
                         );
                         expect(res.body.location).to.equal('password');
                     });
@@ -229,7 +229,7 @@ describe('Users endpoint', function () {
                     .then(res => {
                         expect(res).to.have.status(422);
                         expect(res.body.reason).to.equal('ValidationError');
-                        expect(res.body.message).to.equal('Username already taken');
+                        expect(res.body.message).to.equal('username already taken');
                         expect(res.body.location).to.equal('username');
                     });
             });
