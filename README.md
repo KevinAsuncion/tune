@@ -10,7 +10,7 @@ Password:  demopassword
 # Screenshots
 Landing Page
 
-![landing-page](screenshots/landingpage.png)
+![landing-page](screenshots/landing-page.png)
 
 Dashboard
 
