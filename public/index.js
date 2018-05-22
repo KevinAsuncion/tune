@@ -257,6 +257,7 @@ function listenCreateEntry() {
     $('.create-new-entry-btn').on('click', function () {
         toggleCreateEntryModal();
         checkAlertBoxes();
+        $("#js-create-entry-modal-content").scrollTop(0);
     });
 }
 
@@ -309,6 +310,7 @@ function postNewEntry(newEntry) {
         success: function(){
             getJournalEntries();
             toggleSuccessAlert();
+            scrollToTop();
         },
         error: toggleErrorAlert
     });
@@ -371,14 +373,17 @@ function renderViewEntry(data) {
         <h2 class="entry-best-self-heading">What is my best self like today?</h2>
         <p class="best-self-entry"> ${data.best_self}</p>
     `)
-
-    $('html,body').animate({ scrollTop: $('.main-container').offset().top}, 'slow');
+    scrollToTop();
     toggleEntriesContainer();
     if (!$('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').is(':visible')) {
         $('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
     }
 }
 
+
+function scrollToTop(){
+    $('html,body').animate({ scrollTop: $('.main-container').offset().top }, 'slow');
+}
 //****************************************************
 // EDIT ENTRY
 //****************************************************
@@ -386,6 +391,7 @@ function renderViewEntry(data) {
 function listenEditButton() {
     $('.edit-entry-btn').on('click', e => {
         toggleEditModal();
+        $("#js-edit-entry-modal-content").scrollTop(0);
         const image_url = $('.meaningful-image-img').attr('src');
         const meaningful_photo = $('.meaningful-photo-entry').text();
         const grateful = $('.grateful-entry').text();
@@ -438,6 +444,7 @@ function updateEntryRequest(updatedEntry) {
         success: function(){
             getJournalEntries();
             toggleSuccessAlert();
+            scrollToTop();
         },
         error: toggleErrorAlert
     });
@@ -493,6 +500,7 @@ function makeDeleteRequest(id) {
         success: function(){
             getJournalEntries();
             toggleSuccessAlert();
+            scrollToTop();
         }, 
         error: toggleErrorAlert
     });

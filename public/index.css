@@ -94,7 +94,7 @@ body {
     width: 150px;
     margin-left: auto;
     margin-right: auto; 
-    color: white;
+    background-color:white;
     border-radius: 4px;
     cursor: pointer;
     padding: 10px;
@@ -143,13 +143,11 @@ label, input {
     height: 30px;
 }
 
-input:invalid {
-     -moz-box-shadow: none;
+input {
+    box-shadow:none;
+    border: 1px solid #aaa;
 }
 
-input {
-     border: 1px solid #aaa;
-}
 
 label {
     margin-bottom: 30px;
@@ -157,6 +155,10 @@ label {
 
 fieldset {
     border: none; 
+}
+
+input:required {
+    box-shadow: none;
 }
 
 textarea {
@@ -184,7 +186,10 @@ textarea {
 .alert-box {
     padding: 20px;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    position: absolute;
+    top: 79px;
+    width: 100%;
 }
 
 .error-alert-box {
@@ -222,9 +227,9 @@ textarea {
     font-weight: bold;
     height: 35px;
     width: 200px;
+    margin-top: 80px;
     cursor: pointer;
 }
-
 
 .login-form-btn, .signup-form-btn, .create-entry-submit-btn,
 .edit-entry-submit-btn{
