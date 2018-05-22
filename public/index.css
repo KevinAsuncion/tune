@@ -143,6 +143,10 @@ label, input {
     height: 30px;
 }
 
+input:invalid {
+     -moz-box-shadow: none;
+}
+
 input {
      border: 1px solid #aaa;
 }
