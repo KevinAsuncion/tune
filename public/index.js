@@ -23,8 +23,14 @@ function listenLogin() {
 function listenLoginCloseButton() {
     $('.login-close-button').on('click', function () {
         toggleLoginModal();
-        $('.login-error').text('');
+        clearLoginInputs();
     });
+}
+
+function clearLoginInputs(){
+    $('#js-login-username').val('');
+    $('#js-login-password').val('');
+    $('.login-error').text('');
 }
 
 function toggleLoginModal() {
@@ -37,8 +43,7 @@ function listenLoginSubmit() {
         e.preventDefault();
         const username = $('#js-login-username').val();
         const password = $('#js-login-password').val();
-        $('#js-login-username').val('');
-        $('#js-login-password').val('');
+        clearLoginInputs();
         const userCreds = {
             username: username,
             password: password
@@ -81,6 +86,21 @@ function showJournalDashboard() {
     $('.login-link').toggle();
     $('.signup-link').toggle();
     $('.logout-link').toggle();
+    if ($('.success-alert-box').is(':visible')) {
+        $('.success-alert-box').toggle();
+    }
+    if ($('.error-alert-box').is(':visible')) {
+        $('.error-alert-box').toggle();
+    }
+    if ($('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').is(':visible')) {
+        $('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
+    }
+    if (!$('.journal-entries-container').is(':visible')) {
+        $('.journal-entries-container').toggle();
+    };
+    if (!$('.create-new-entry-btn').is(':visible')) {
+        $('.create-new-entry-btn').toggle();
+    };
 }
 
 function setUpHeaders() {
@@ -98,7 +118,6 @@ function getJournalEntries(){
     $.ajax({
         url: '/entries',
         method: 'GET',
-        data: JSON.stringify(),
         crossDomain: true,
         contentType: 'application/json',
         success: function (data){
@@ -107,8 +126,6 @@ function getJournalEntries(){
         error: toggleErrorAlert
     });
 }
-
-
 
 function logOut(){
     $('.logout-link').on('click', function(){
@@ -119,6 +136,7 @@ function logOut(){
         $('main').toggle();
         $('.welcome-page').toggle();
         $('.journal-entries-container').empty();
+        $('.entry-container').empty();
     });
 }
 
@@ -161,7 +179,7 @@ function listenSignUp() {
 function listenSignUpCloseButton() {
     $('.signup-close-button').on('click', function () {
         toggleSignUpModal();
-        $('.signup-error').text('');
+        clearSignupInputs();
     });
 }
 
@@ -175,9 +193,7 @@ function listenSignUpSubmit(){
         const username = $('#js-signup-username').val();
         const password = $('#js-signup-password').val();
         const fullname = $('#js-signup-fullname').val();
-        $('#js-signup-username').val('');
-        $('#js-signup-password').val('');
-        $('#js-signup-fullname').val('');
+        clearSignupInputs();
     
         const userInfo = {
             username: username,
@@ -204,6 +220,13 @@ function signup(userInfo){
     });
 }
 
+function clearSignupInputs(){
+    $('#js-signup-username').val('');
+    $('#js-signup-password').val('');
+    $('#js-signup-fullname').val('');
+    $('.signup-error').text('');
+}
+
 function validSignup(){
     $('.signup-modal').toggleClass('show-modal');
     $('.login-modal').toggleClass('show-modal');
@@ -219,12 +242,19 @@ function validSignup(){
 function listenCreateEntry() {
     $('.create-new-entry-btn').on('click', function () {
         toggleCreateEntryModal();
+        if ($('.success-alert-box').is(':visible')) {
+            $('.success-alert-box').toggle();
+        }
+        if ($('.error-alert-box').is(':visible')) {
+            $('.error-alert-box').toggle();
+        }
     });
 }
 
 function listenCreateEntryCloseButton() {
     $('.create-entry-close-button').on('click', function () {
         toggleCreateEntryModal();
+        clearCreateInputs();
     });
 }
 
@@ -239,10 +269,7 @@ function createNewJournalEntry() {
         const meaningful_image = $('.meaning-image-input').val();
         const grateful = $('.grateful-input').val();
         const bestSelf = $('.bestself-input').val();
-        $('.image-url-input').val('');
-        $('.meaning-image-input').val('');
-        $('.grateful-input').val('');
-        $('.bestself-input').val('');
+        clearCreateInputs();
         let newEntry = {
             image_url: image_url,
             photo_meaning: meaningful_image,
@@ -256,6 +283,13 @@ function createNewJournalEntry() {
         }
         postNewEntry(newEntry);
     });
+}
+
+function clearCreateInputs(){
+    $('.image-url-input').val('');
+    $('.meaning-image-input').val('');
+    $('.grateful-input').val('');
+    $('.bestself-input').val('');
 }
 
 function postNewEntry(newEntry){
@@ -299,6 +333,12 @@ function renderDashboardJournalEntries(data) {
 
 function getTheId() {
     $('.journal-entries-container').on('click', '.entry-view-btn', e => {
+        if ($('.success-alert-box').is(':visible')) {
+            $('.success-alert-box').toggle();
+        }
+        if ($('.error-alert-box').is(':visible')) {
+            $('.error-alert-box').toggle();
+        }
         const selectedId = $(e.currentTarget).parents('.journal-entry-card').attr('data-id');
         makeViewRequest(selectedId);
     });
@@ -386,8 +426,16 @@ function listenEditEntrySubmitButton() {
         $('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
         $('.journal-entries-container').toggle();
         $('.create-new-entry-btn').toggle(); 
+        clearEditInputs();
         updateEntryRequest(updatedEntry);
     });
+}
+
+function clearEditInputs(){
+    $('.edit-image-url-input').val('');
+    $('.edit-meaning-image-input').val('');
+    $('.edit-grateful-input').val('');
+    $('.edit-bestself-input').val('');
 }
 
 function updateEntryRequest(updatedEntry){
@@ -408,6 +456,7 @@ function updateEntryRequest(updatedEntry){
 function listenEditCloseButton() {
     $('.edit-entry-close-button').on('click', function () {
         toggleEditModal();
+        clearEditInputs();
     });
 }
 
