@@ -49,6 +49,14 @@
         <main role="main" hidden>
             <section class="journal">
                 <div class="main-container" aria-live="assertive">
+                    <div class="error-alert-box alert-box "hidden>
+                        <span class="js-error-alert-close-btn alert-close-btn"> &times;</span>
+                        Looks like there was an error, try your request at a later time. 
+                    </div>
+                    <div class="success-alert-box alert-box" hidden>
+                        <span class="js-success-alert-close-btn alert-close-btn"> &times;</span>
+                        Success! Your changes have been made. 
+                    </div>
                     <div class="create-new-entry">
                         <button class="create-new-entry-btn"> + Add New Entry</button>
                     </div>
@@ -115,7 +123,7 @@
                         <fieldset>
                             <form class="create-entry-form">
                                 <label class="image-url-label">Image url
-                                    <input type="text" class="image-url-input" name="image_url" required>
+                                    <input type="text" class="image-url-input" name="image_url" placeholder="add the url of a meaningful image here" required>
                                 </label>
                                 <label class="create-entry-form-label">The meaning of this image is..
                                     <textarea class="meaning-image-input" name="meaningful_image" placeholder="it reminds me that family is the most important thing"
@@ -144,7 +152,7 @@
                             <form class="edit-entry-form">
                                 <input type="hidden" class="edit-selected-id">
                                 <label class="image-url-label">Image url
-                                    <input type="text" name="image_url" class="edit-image-url-input" required>
+                                    <input type="text" name="image_url" class="edit-image-url-input" placeholder="add the url of a meaningful image here" required>
                                 </label>
                                 <label class="edit-entry-form-label">The meaning of this image is..
                                     <textarea class="edit-meaning-image-input" name="meaningful_image" placeholder="it reminds me that family is the most important thing"

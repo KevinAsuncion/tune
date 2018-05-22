@@ -38,21 +38,6 @@ router.get('/', jwtAuth, (req, res) => {
         });
 });
 
-// router.get('/', jwtAuth, (req, res) => {
-//     Entry
-//         .find({ user: req.user.id })
-//         .then(entries => {
-//             res.json({
-//                 entries: entries.map(
-//                     (entry) => entry.serialize())
-//             });
-//         })
-//         .catch(
-//         err => {
-//             console.error(err);
-//             res.status(500).json({ message: 'Internal server error' });
-//         });
-// });
 
 //get entries of specific user of specific id 
 router.get('/:id', jwtAuth, (req, res) => {
@@ -110,7 +95,6 @@ router.put('/:id', jwtAuth, jsonParser, (req, res) => {
         best_self: req.body.best_self,
     };
 
-    //update entry with specific ID with updated input
     Entry.findByIdAndUpdate(
         { _id: req.body.id },
         { $set: updatedEntry },
