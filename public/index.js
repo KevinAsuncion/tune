@@ -4,7 +4,7 @@
 // HERO 
 //****************************************************
 
-function listenWelcomeSignUp() {
+function listenWelcomeSignUp(){
     $('.hero-signup-button').on('click', function () {
         toggleSignUpModal();
     });
@@ -14,13 +14,13 @@ function listenWelcomeSignUp() {
 // LOGIN 
 //****************************************************
 
-function listenLogin() {
+function listenLogin(){
     $('.login-link').on('click', function () {
         toggleLoginModal();
     });
 }
 
-function listenLoginCloseButton() {
+function listenLoginCloseButton(){
     $('.login-close-button').on('click', function () {
         toggleLoginModal();
         clearLoginInputs();
@@ -31,14 +31,15 @@ function clearLoginInputs(){
     $('#js-login-username').val('');
     $('#js-login-password').val('');
     $('.login-error').text('');
+    $('.signup-successful').text('');
 }
 
-function toggleLoginModal() {
+function toggleLoginModal(){
     $('.login-modal').toggleClass('show-modal');
 }
 
 
-function listenLoginSubmit() {
+function listenLoginSubmit(){
     $('.login-form').submit(function (e) {
         e.preventDefault();
         const username = $('#js-login-username').val();
@@ -52,7 +53,7 @@ function listenLoginSubmit() {
     });
 }
 
-function login(userCreds) {
+function login(userCreds){
     $.ajax({
         url: 'auth/login',
         method: 'POST',
@@ -65,36 +66,34 @@ function login(userCreds) {
 
 }
 
-function validLogin(res) {
-    $('.login-error').text('');
-    $('.signup-successful').text('');
+function validLogin(res){
+    clearLoginInputs();
+    toggleLoginModal();
     localStorage.setItem('Token', res.authToken); 
     setUpHeaders();
     showJournalDashboard();
     getJournalEntries(); 
 }
 
-function invalidLogin() {
+function invalidLogin(){
     $('.login-error').text('Login error. Please try again.'); 
 }
 
-function showJournalDashboard() {
-    $('.login-error').text('');
-    $('.login-modal').toggleClass('show-modal');
-    $('.welcome-page').toggle();
-    $('main').toggle();
+function toggleNavLinks(){
     $('.login-link').toggle();
     $('.signup-link').toggle();
     $('.logout-link').toggle();
-    if ($('.success-alert-box').is(':visible')) {
-        $('.success-alert-box').toggle();
-    }
-    if ($('.error-alert-box').is(':visible')) {
-        $('.error-alert-box').toggle();
-    }
-    if ($('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').is(':visible')) {
-        $('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
-    }
+}
+///////////////////
+function showJournalDashboard(){
+    toggleMainAndWelcomePage()
+    toggleNavLinks();
+    checkAlertBoxes();
+    checkViewEntryBtns();
+    checkIfJouranlEntriesAndButtonVisible();
+}
+
+function checkIfJouranlEntriesAndButtonVisible(){
     if (!$('.journal-entries-container').is(':visible')) {
         $('.journal-entries-container').toggle();
     };
@@ -103,7 +102,19 @@ function showJournalDashboard() {
     };
 }
 
-function setUpHeaders() {
+function toggleMainAndWelcomePage(){
+    $('.welcome-page').toggle();
+    $('main').toggle();
+}
+
+
+function checkViewEntryBtns(){
+    if ($('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').is(':visible')) {
+        $('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
+    }
+}
+
+function setUpHeaders(){
     let token = localStorage.getItem('Token');
     $.ajaxSetup({
         dataType: 'json',
@@ -130,11 +141,8 @@ function getJournalEntries(){
 function logOut(){
     $('.logout-link').on('click', function(){
         localStorage.removeItem('Token');
-        $('.login-link').toggle();
-        $('.signup-link').toggle();
-        $('.logout-link').toggle();
-        $('main').toggle();
-        $('.welcome-page').toggle();
+        toggleNavLinks();
+        toggleMainAndWelcomePage();
         $('.journal-entries-container').empty();
         $('.entry-container').empty();
     });
@@ -149,7 +157,7 @@ function toggleErrorAlert(){
     $('.error-alert-box').toggle();
 }
 
-function toggleSuccessAlert() {
+function toggleSuccessAlert(){
     $('.success-alert-box').toggle();
 }
 
@@ -159,7 +167,7 @@ function handleErrorAlertCloseButton(){
     });
 }
 
-function handleSuccessAlertCloseButton() {
+function handleSuccessAlertCloseButton(){
     $('.js-success-alert-close-btn').on('click', function(){
         toggleSuccessAlert();
     });
@@ -170,20 +178,20 @@ function handleSuccessAlertCloseButton() {
 //****************************************************
 
 
-function listenSignUp() {
+function listenSignUp(){
     $('.signup-link').on('click', function (event) {
         toggleSignUpModal();
     });
 }
 
-function listenSignUpCloseButton() {
+function listenSignUpCloseButton(){
     $('.signup-close-button').on('click', function () {
         toggleSignUpModal();
         clearSignupInputs();
     });
 }
 
-function toggleSignUpModal() {
+function toggleSignUpModal(){
     $('.signup-modal').toggleClass('show-modal');
 }
 
@@ -194,13 +202,11 @@ function listenSignUpSubmit(){
         const password = $('#js-signup-password').val();
         const fullname = $('#js-signup-fullname').val();
         clearSignupInputs();
-    
         const userInfo = {
             username: username,
             password: password,
             fullname: fullname
         }
-
         signup(userInfo);
     });
 }
@@ -228,41 +234,44 @@ function clearSignupInputs(){
 }
 
 function validSignup(){
-    $('.signup-modal').toggleClass('show-modal');
-    $('.login-modal').toggleClass('show-modal');
+    toggleSignUpModal();
+    toggleLoginModal();
     $('.signup-error').text('');
     $('.signup-successful').text('Signup successful, please login');
 }
 
 
+function checkAlertBoxes(){
+    if ($('.success-alert-box').is(':visible')) {
+        $('.success-alert-box').toggle();
+    }
+    if ($('.error-alert-box').is(':visible')) {
+        $('.error-alert-box').toggle();
+    }
+}
 //****************************************************
 // CREATE ENTRY
 //****************************************************
 
-function listenCreateEntry() {
+function listenCreateEntry(){
     $('.create-new-entry-btn').on('click', function () {
         toggleCreateEntryModal();
-        if ($('.success-alert-box').is(':visible')) {
-            $('.success-alert-box').toggle();
-        }
-        if ($('.error-alert-box').is(':visible')) {
-            $('.error-alert-box').toggle();
-        }
+        checkAlertBoxes();
     });
 }
 
-function listenCreateEntryCloseButton() {
+function listenCreateEntryCloseButton(){
     $('.create-entry-close-button').on('click', function () {
         toggleCreateEntryModal();
         clearCreateInputs();
     });
 }
 
-function toggleCreateEntryModal() {
+function toggleCreateEntryModal(){
     $('.create-entry-modal').toggleClass('show-modal');
 }
 
-function createNewJournalEntry() {
+function createNewJournalEntry(){
     $('.create-entry-form').submit(e => {
         e.preventDefault();
         const image_url = $('.image-url-input').val();
@@ -278,9 +287,7 @@ function createNewJournalEntry() {
         }
         toggleCreateEntryModal();
         $('.entry-container').empty();
-        if ($('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').is(':visible')) {
-            $('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
-        }
+        checkViewEntryBtns();
         postNewEntry(newEntry);
     });
 }
@@ -307,7 +314,7 @@ function postNewEntry(newEntry){
     });
 }
 
-function renderDashboardJournalEntries(data) {
+function renderDashboardJournalEntries(data){
     
     let journalEntries = data.entries.map(entry => {
         return {
@@ -331,14 +338,9 @@ function renderDashboardJournalEntries(data) {
     $('.journal-entries-container').html(journalEntriesList);
 }
 
-function getTheId() {
+function getTheId(){
     $('.journal-entries-container').on('click', '.entry-view-btn', e => {
-        if ($('.success-alert-box').is(':visible')) {
-            $('.success-alert-box').toggle();
-        }
-        if ($('.error-alert-box').is(':visible')) {
-            $('.error-alert-box').toggle();
-        }
+        checkAlertBoxes();
         const selectedId = $(e.currentTarget).parents('.journal-entry-card').attr('data-id');
         makeViewRequest(selectedId);
     });
@@ -356,9 +358,8 @@ function makeViewRequest(id){
         error: toggleErrorAlert
     });
 }
-
-function renderViewEntry(data) {
-
+/////////////////////////////////////////
+function renderViewEntry(data){
     $('.entry-container').html(
         `
       <span id="selected-id" data-id="${data.id}"></span>
@@ -370,26 +371,19 @@ function renderViewEntry(data) {
         <h2 class="entry-best-self-heading">What is my best self like today?</h2>
         <p class="best-self-entry"> ${data.best_self}</p>
     `)
-    $('html,body').animate({
-        scrollTop: $('.main-container').offset().top
-    }, 'slow');
-    $('.create-new-entry-btn').toggle();
-    toggleEditAndDeleteButtons();
-    $('.journal-entries-container').toggle();
-}
 
-function toggleEditAndDeleteButtons() {
-    if ($('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').is(':visible')) {
-        return;
+    $('html,body').animate({ scrollTop: $('.main-container').offset().top}, 'slow');
+    toggleEntriesContainer();
+    if (!$('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').is(':visible')) {
+        $('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
     }
-    $('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
 }
 
 //****************************************************
 // EDIT ENTRY
 //****************************************************
 
-function listenEditButton() {
+function listenEditButton(){
     $('.edit-entry-btn').on('click', e => {
         toggleEditModal();
         const image_url = $('.meaningful-image-img').attr('src');
@@ -404,15 +398,13 @@ function listenEditButton() {
 }
 
 
-function listenEditEntrySubmitButton() {
+function listenEditEntrySubmitButton(){
     $('.edit-entry-form').submit(e => {
         e.preventDefault();
-
         const updated_image_url = $('.edit-image-url-input').val();
         const updated_meaning_image = $('.edit-meaning-image-input').val();
         const updated_grateful = $('.edit-grateful-input').val();
         const updated_best_self = $('.edit-bestself-input').val();
-
         const selectedId = $('#selected-id').attr('data-id');
         const updatedEntry = {
             id: selectedId,
@@ -422,10 +414,8 @@ function listenEditEntrySubmitButton() {
             best_self: updated_best_self,
         }
         toggleEditModal();
-        $('.entry-container').empty();
-        $('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
-        $('.journal-entries-container').toggle();
-        $('.create-new-entry-btn').toggle(); 
+        toggleEntryContainer();
+        toggleEntriesContainer();
         clearEditInputs();
         updateEntryRequest(updatedEntry);
     });
@@ -453,44 +443,44 @@ function updateEntryRequest(updatedEntry){
     });
 }
 
-function listenEditCloseButton() {
+function listenEditCloseButton(){
     $('.edit-entry-close-button').on('click', function () {
         toggleEditModal();
         clearEditInputs();
     });
 }
 
-function toggleEditModal() {
+function toggleEditModal(){
     $('.edit-entry-modal').toggleClass('show-modal');
 }
 
-function listenBackButton() {
+function listenBackButton(){
     $('.back-entry-btn').on('click', function () {
-        $('.entry-container').empty();
-        $('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
-
-        if (!$('.journal-entries-container').is(':visible')) {
-            $('.journal-entries-container').toggle();
-        };
-
-        if (!$('.create-new-entry-btn').is(':visible')) {
-            $('.create-new-entry-btn').toggle();
-        };
+        toggleEntryContainer()
+        toggleEntriesContainer();
     });
+}
+
+function toggleEntriesContainer(){
+    $('.journal-entries-container').toggle();
+    $('.create-new-entry-btn').toggle();
+}
+
+function toggleEntryContainer(){
+    $('.entry-container').empty();
+    $('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
 }
 
 //****************************************************
 // DELETE ENTRY
 //****************************************************
 
-function listenDeleteButton() {
+function listenDeleteButton(){
     $('.delete-entry-btn').on('click', e => {
         const selectedId = $('#selected-id').attr('data-id');
         makeDeleteRequest(selectedId);
-        $('.entry-container').empty();
-        $('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
-        $('.journal-entries-container').toggle();
-        $('.create-new-entry-btn').toggle();
+        toggleEntryContainer()
+        toggleEntriesContainer();
     });
 }
 
@@ -508,11 +498,13 @@ function makeDeleteRequest(id){
     });
 }
 
+
+
 //****************************************************
 // START 
 //****************************************************
 
-function startApp() {
+function startApp(){
     listenWelcomeSignUp()
     listenLogin();
     listenLoginCloseButton();
@@ -535,4 +527,3 @@ function startApp() {
 }
 
 $(startApp)
-
