@@ -2,15 +2,11 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-
 const { User } = require('./models');
-
 const router = express.Router();
-
 const jsonParser = bodyParser.json();
 
 //POST to register a user  
-
 router.post('/', jsonParser, (req, res) => {
     const requiredFields = ['username', 'password','fullname'];
     const missingField = requiredFields.find(field => !(field in req.body));

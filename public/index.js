@@ -4,7 +4,7 @@
 // HERO 
 //****************************************************
 
-function listenWelcomeSignUp(){
+function listenWelcomeSignUp() {
     $('.hero-signup-button').on('click', function () {
         toggleSignUpModal();
     });
@@ -14,32 +14,32 @@ function listenWelcomeSignUp(){
 // LOGIN 
 //****************************************************
 
-function listenLogin(){
+function listenLogin() {
     $('.login-link').on('click', function () {
         toggleLoginModal();
     });
 }
 
-function listenLoginCloseButton(){
+function listenLoginCloseButton() {
     $('.login-close-button').on('click', function () {
         toggleLoginModal();
         clearLoginInputs();
     });
 }
 
-function clearLoginInputs(){
+function clearLoginInputs() {
     $('#js-login-username').val('');
     $('#js-login-password').val('');
     $('.login-error').text('');
     $('.signup-successful').text('');
 }
 
-function toggleLoginModal(){
+function toggleLoginModal() {
     $('.login-modal').toggleClass('show-modal');
 }
 
 
-function listenLoginSubmit(){
+function listenLoginSubmit() {
     $('.login-form').submit(function (e) {
         e.preventDefault();
         const username = $('#js-login-username').val();
@@ -53,7 +53,7 @@ function listenLoginSubmit(){
     });
 }
 
-function login(userCreds){
+function login(userCreds) {
     $.ajax({
         url: 'auth/login',
         method: 'POST',
@@ -66,7 +66,7 @@ function login(userCreds){
 
 }
 
-function validLogin(res){
+function validLogin(res) {
     clearLoginInputs();
     toggleLoginModal();
     localStorage.setItem('Token', res.authToken); 
@@ -75,17 +75,17 @@ function validLogin(res){
     getJournalEntries(); 
 }
 
-function invalidLogin(){
+function invalidLogin() {
     $('.login-error').text('Login error. Please try again.'); 
 }
 
-function toggleNavLinks(){
+function toggleNavLinks() {
     $('.login-link').toggle();
     $('.signup-link').toggle();
     $('.logout-link').toggle();
 }
-///////////////////
-function showJournalDashboard(){
+
+function showJournalDashboard() {
     toggleMainAndWelcomePage()
     toggleNavLinks();
     checkAlertBoxes();
@@ -93,7 +93,7 @@ function showJournalDashboard(){
     checkIfJouranlEntriesAndButtonVisible();
 }
 
-function checkIfJouranlEntriesAndButtonVisible(){
+function checkIfJouranlEntriesAndButtonVisible() {
     if (!$('.journal-entries-container').is(':visible')) {
         $('.journal-entries-container').toggle();
     };
@@ -102,19 +102,19 @@ function checkIfJouranlEntriesAndButtonVisible(){
     };
 }
 
-function toggleMainAndWelcomePage(){
+function toggleMainAndWelcomePage() {
     $('.welcome-page').toggle();
     $('main').toggle();
 }
 
 
-function checkViewEntryBtns(){
+function checkViewEntryBtns() {
     if ($('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').is(':visible')) {
         $('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
     }
 }
 
-function setUpHeaders(){
+function setUpHeaders() {
     let token = localStorage.getItem('Token');
     $.ajaxSetup({
         dataType: 'json',
@@ -125,7 +125,7 @@ function setUpHeaders(){
     });
 }
 
-function getJournalEntries(){ 
+function getJournalEntries() { 
     $.ajax({
         url: '/entries',
         method: 'GET',
@@ -138,7 +138,7 @@ function getJournalEntries(){
     });
 }
 
-function logOut(){
+function logOut() {
     $('.logout-link').on('click', function(){
         localStorage.removeItem('Token');
         toggleNavLinks();
@@ -153,21 +153,21 @@ function logOut(){
 //****************************************************
 
 
-function toggleErrorAlert(){
+function toggleErrorAlert() {
     $('.error-alert-box').toggle();
 }
 
-function toggleSuccessAlert(){
+function toggleSuccessAlert() {
     $('.success-alert-box').toggle();
 }
 
-function handleErrorAlertCloseButton(){
+function handleErrorAlertCloseButton() {
     $('.js-error-alert-close-btn').on('click',function(){
         toggleErrorAlert();
     });
 }
 
-function handleSuccessAlertCloseButton(){
+function handleSuccessAlertCloseButton() {
     $('.js-success-alert-close-btn').on('click', function(){
         toggleSuccessAlert();
     });
@@ -178,24 +178,24 @@ function handleSuccessAlertCloseButton(){
 //****************************************************
 
 
-function listenSignUp(){
+function listenSignUp() {
     $('.signup-link').on('click', function (event) {
         toggleSignUpModal();
     });
 }
 
-function listenSignUpCloseButton(){
+function listenSignUpCloseButton() {
     $('.signup-close-button').on('click', function () {
         toggleSignUpModal();
         clearSignupInputs();
     });
 }
 
-function toggleSignUpModal(){
+function toggleSignUpModal() {
     $('.signup-modal').toggleClass('show-modal');
 }
 
-function listenSignUpSubmit(){
+function listenSignUpSubmit() {
     $('.signup-form').submit(function(e){
         e.preventDefault();
         const username = $('#js-signup-username').val();
@@ -211,7 +211,7 @@ function listenSignUpSubmit(){
     });
 }
 
-function signup(userInfo){
+function signup(userInfo) {
     $.ajax({
         url: '/users',
         method: 'POST',
@@ -226,14 +226,14 @@ function signup(userInfo){
     });
 }
 
-function clearSignupInputs(){
+function clearSignupInputs() {
     $('#js-signup-username').val('');
     $('#js-signup-password').val('');
     $('#js-signup-fullname').val('');
     $('.signup-error').text('');
 }
 
-function validSignup(){
+function validSignup() {
     toggleSignUpModal();
     toggleLoginModal();
     $('.signup-error').text('');
@@ -241,7 +241,7 @@ function validSignup(){
 }
 
 
-function checkAlertBoxes(){
+function checkAlertBoxes() {
     if ($('.success-alert-box').is(':visible')) {
         $('.success-alert-box').toggle();
     }
@@ -253,25 +253,25 @@ function checkAlertBoxes(){
 // CREATE ENTRY
 //****************************************************
 
-function listenCreateEntry(){
+function listenCreateEntry() {
     $('.create-new-entry-btn').on('click', function () {
         toggleCreateEntryModal();
         checkAlertBoxes();
     });
 }
 
-function listenCreateEntryCloseButton(){
+function listenCreateEntryCloseButton() {
     $('.create-entry-close-button').on('click', function () {
         toggleCreateEntryModal();
         clearCreateInputs();
     });
 }
 
-function toggleCreateEntryModal(){
+function toggleCreateEntryModal() {
     $('.create-entry-modal').toggleClass('show-modal');
 }
 
-function createNewJournalEntry(){
+function createNewJournalEntry() {
     $('.create-entry-form').submit(e => {
         e.preventDefault();
         const image_url = $('.image-url-input').val();
@@ -292,14 +292,14 @@ function createNewJournalEntry(){
     });
 }
 
-function clearCreateInputs(){
+function clearCreateInputs() {
     $('.image-url-input').val('');
     $('.meaning-image-input').val('');
     $('.grateful-input').val('');
     $('.bestself-input').val('');
 }
 
-function postNewEntry(newEntry){
+function postNewEntry(newEntry) {
     $.ajax({
         url: '/entries',
         method: 'POST',
@@ -314,7 +314,7 @@ function postNewEntry(newEntry){
     });
 }
 
-function renderDashboardJournalEntries(data){
+function renderDashboardJournalEntries(data) {
     
     let journalEntries = data.entries.map(entry => {
         return {
@@ -338,7 +338,7 @@ function renderDashboardJournalEntries(data){
     $('.journal-entries-container').html(journalEntriesList);
 }
 
-function getTheId(){
+function getTheId() {
     $('.journal-entries-container').on('click', '.entry-view-btn', e => {
         checkAlertBoxes();
         const selectedId = $(e.currentTarget).parents('.journal-entry-card').attr('data-id');
@@ -346,7 +346,7 @@ function getTheId(){
     });
 }
 
-function makeViewRequest(id){
+function makeViewRequest(id) {
     $.ajax({
         url: `/entries/${id}`,
         method: 'GET',
@@ -358,8 +358,8 @@ function makeViewRequest(id){
         error: toggleErrorAlert
     });
 }
-/////////////////////////////////////////
-function renderViewEntry(data){
+
+function renderViewEntry(data) {
     $('.entry-container').html(
         `
       <span id="selected-id" data-id="${data.id}"></span>
@@ -383,7 +383,7 @@ function renderViewEntry(data){
 // EDIT ENTRY
 //****************************************************
 
-function listenEditButton(){
+function listenEditButton() {
     $('.edit-entry-btn').on('click', e => {
         toggleEditModal();
         const image_url = $('.meaningful-image-img').attr('src');
@@ -398,7 +398,7 @@ function listenEditButton(){
 }
 
 
-function listenEditEntrySubmitButton(){
+function listenEditEntrySubmitButton() {
     $('.edit-entry-form').submit(e => {
         e.preventDefault();
         const updated_image_url = $('.edit-image-url-input').val();
@@ -421,14 +421,14 @@ function listenEditEntrySubmitButton(){
     });
 }
 
-function clearEditInputs(){
+function clearEditInputs() {
     $('.edit-image-url-input').val('');
     $('.edit-meaning-image-input').val('');
     $('.edit-grateful-input').val('');
     $('.edit-bestself-input').val('');
 }
 
-function updateEntryRequest(updatedEntry){
+function updateEntryRequest(updatedEntry) {
     $.ajax({
         url: `/entries/${updatedEntry.id}`,
         method: 'PUT',
@@ -443,30 +443,30 @@ function updateEntryRequest(updatedEntry){
     });
 }
 
-function listenEditCloseButton(){
+function listenEditCloseButton() {
     $('.edit-entry-close-button').on('click', function () {
         toggleEditModal();
         clearEditInputs();
     });
 }
 
-function toggleEditModal(){
+function toggleEditModal() {
     $('.edit-entry-modal').toggleClass('show-modal');
 }
 
-function listenBackButton(){
+function listenBackButton() {
     $('.back-entry-btn').on('click', function () {
         toggleEntryContainer()
         toggleEntriesContainer();
     });
 }
 
-function toggleEntriesContainer(){
+function toggleEntriesContainer() {
     $('.journal-entries-container').toggle();
     $('.create-new-entry-btn').toggle();
 }
 
-function toggleEntryContainer(){
+function toggleEntryContainer() {
     $('.entry-container').empty();
     $('.back-entry-btn, .edit-entry-btn, .delete-entry-btn').toggle();
 }
@@ -475,7 +475,7 @@ function toggleEntryContainer(){
 // DELETE ENTRY
 //****************************************************
 
-function listenDeleteButton(){
+function listenDeleteButton() {
     $('.delete-entry-btn').on('click', e => {
         const selectedId = $('#selected-id').attr('data-id');
         makeDeleteRequest(selectedId);
@@ -484,7 +484,7 @@ function listenDeleteButton(){
     });
 }
 
-function makeDeleteRequest(id){
+function makeDeleteRequest(id) {
     $.ajax({
         url: `/entries/${id}`,
         method: 'DELETE',
@@ -498,13 +498,11 @@ function makeDeleteRequest(id){
     });
 }
 
-
-
 //****************************************************
 // START 
 //****************************************************
 
-function startApp(){
+function startApp() {
     listenWelcomeSignUp()
     listenLogin();
     listenLoginCloseButton();

@@ -18,7 +18,7 @@ const UserSchema = mongoose.Schema({
     fullname: { type: String, default: '' },
 });
 
-UserSchema.methods.serialize = function () {
+UserSchema.methods.serialize = function() {
     return {
         id: this._id,
         username: this.username,
@@ -26,11 +26,11 @@ UserSchema.methods.serialize = function () {
     };
 };
 
-UserSchema.methods.validatePassword = function (password) {
+UserSchema.methods.validatePassword = function(password) {
     return bcrypt.compare(password, this.password);
 };
 
-UserSchema.statics.hashPassword = function (password) {
+UserSchema.statics.hashPassword = function(password) {
     return bcrypt.hash(password, 10);
 };
 
