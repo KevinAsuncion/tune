@@ -89,7 +89,6 @@ body {
     font-weight: bold;
 }
 
-
 .hero-signup-button {
     width: 150px;
     margin-left: auto;
@@ -320,6 +319,7 @@ i {
     background: white;
     font-weight: bold;
     padding: 5px; 
+    margin: 0; 
     color: rgb(31, 58, 104);
 }
 
@@ -404,7 +404,6 @@ i {
     width: 100%;
     height: auto;
 }
-/* Modal */
 
 .signup-modal, .login-modal, .create-entry-modal, .edit-entry-modal{
     position: fixed;

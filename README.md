@@ -3,6 +3,8 @@ Tune is a simply structured daily journal based on the science of positive psych
 
 # Demo
 
+https://lit-cliffs-29131.herokuapp.com/
+
 For a demo account use the following credentials: 
 Username:  demousername
 Password:  demopassword 
